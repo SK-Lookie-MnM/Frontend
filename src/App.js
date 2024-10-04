@@ -1,14 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Mainpage from "./components/mainpage/mainpage";
+import SignUp from "./pages/SignUp/SignUp";
 
 function App() {
-  return (
-    <div className="App">
-        <div class ="black-nav">
-            <div>MNM</div>
+    return (
+        <div className="App">
+            <div className="black-nav">
+                <div>MNM</div>
+            </div>
+            <Mainpage />
+            <Routes>
+                <Route path="/signUp" element={<SignUp />} />
+                <Route path="/login" />
+            </Routes>
         </div>
-    </div>
-  );
+    );
 }
 
 export default App;
