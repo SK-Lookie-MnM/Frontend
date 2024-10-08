@@ -59,6 +59,15 @@
     background-color: transparent; /* 기본 배경색을 투명하게 설정 */
 }
 
+.navItem a {
+    text-decoration: none; /* 링크의 밑줄 제거 */
+    color: white; /* 링크 색상 설정 (원하는 색상으로 변경 가능) */
+}
+
+.navItem a:hover {
+    color: #03B888; /* 마우스 올릴 때 색깔 변화 */
+}
+
 @font-face {
     font-family: 'Pretendard-Medium';
     src: url('../../fonts/Pretendard-Medium.ttf') format('truetype');
