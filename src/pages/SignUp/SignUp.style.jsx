@@ -149,7 +149,10 @@ export const CheckField = styled.div`
   gap: 10px; /* 체크박스와 텍스트 사이의 간격 */
 `;
 
-export const Checkbox = styled.input.attrs({ type: "checkbox" })`
+export const RadioButton = styled.input.attrs({
+  type: "radio",
+  name: "memberType",
+})`
   width: 28.57px;
   height: 28.57px;
   border-radius: 100%;
@@ -176,6 +179,11 @@ export const Checkbox = styled.input.attrs({ type: "checkbox" })`
     transform: translate(-50%, -50%);
     z-index: 1; /* 드롭다운보다 낮게 설정 */
   }
+`;
+
+export const CheckOption = styled.p`
+  font: Pretendard;
+  font-size: 22.6px;
 `;
 
 export const SelectBox = styled.select`

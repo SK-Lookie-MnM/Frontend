@@ -3,7 +3,7 @@ import {
   CamcoderLogo,
   CheckContainer,
   CheckField,
-  Checkbox,
+  CheckOption,
   DropdownContainer,
   DropdownHeader,
   DropdownListContainer,
@@ -17,13 +17,14 @@ import {
   Line,
   NameInputContainer,
   PasswordInputContainer,
+  RadioButton,
   SignUpContents,
   SignUpForm,
   SignUpHeader,
   SignUpSection,
   SignUpTitle,
   Warn,
-} from "./SignUp.style";
+} from "./SignUp.style.jsx";
 
 import { FaCheck } from "react-icons/fa6";
 import logo from "../../assets/icon/Signup/Group 2609363.png";
@@ -197,8 +198,12 @@ const SignUp = () => {
             <CheckContainer>
               <Label>4. 회원유형을 선택하세요</Label>
               <CheckField>
-                <Checkbox /> 일반 대학생 <Checkbox /> 팀 MNM
-                <Checkbox /> 운영진
+                <RadioButton id="student" />{" "}
+                <CheckOption htmlFor="student">일반 대학생</CheckOption>
+                <RadioButton id="teamMNM" />{" "}
+                <CheckOption htmlFor="teamMNM">팀 MNM</CheckOption>
+                <RadioButton id="admin" />{" "}
+                <CheckOption htmlFor="admin">운영진</CheckOption>
               </CheckField>
             </CheckContainer>
             <Button>캠코더 가입하기</Button>
