@@ -2,6 +2,7 @@
 import React, {useState} from "react";
 import "./Navbar.css";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/mainpage/camcoder_logo2.png";
 
 const Navbar = () => {
     const navigate = useNavigate(); // useNavigate 초기화
@@ -44,10 +45,20 @@ const Navbar = () => {
         navigate(link); // 클릭 시 해당 링크로 이동
     };
 
-
+    const handleLogoClick = () => {
+        navigate("/"); // 로고 클릭 시 홈 화면으로 이동
+    };
 
     return (
         <nav className="nav">
+            <li className="logoItem">
+                <img
+                    src={logo}
+                    alt="Logo"
+                    className="logo"
+                    onClick={handleLogoClick}
+                />
+            </li>
             <ul className="navContainer">
                 {menuLst.map((menu, index) => (
                     <li
@@ -72,4 +83,5 @@ const Navbar = () => {
         </nav>
     );
 };
+
 export default Navbar;

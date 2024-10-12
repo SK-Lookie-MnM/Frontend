@@ -1,15 +1,23 @@
 .nav {
     background-color: #0C4536;
-    padding: 50px;
+    padding: 20px;
+    list-style: none;  /* 마커 제거 */
+    display: flex;
+    align-items: center;  /* 로고와 메뉴를 수평으로 정렬 */
+    justify-content: space-between;  /* 공간을 동일하게 분배 */
 }
 
 .navContainer {
     justify-content: center; /* 수평 가운데 정렬 */
     align-items: center; /* 수직 가운데 정렬 */
-    list-style: none;
     display: flex;
+    list-style: none;  /* 마커 제거 */
     padding: 0;
     margin: 0;
+}
+
+.navItem {
+    margin-right: 30px;  /* 각 메뉴 항목 사이 간격을 30px로 설정 */
 }
 
 .navItem p{
@@ -76,4 +84,18 @@
 }
 body {
     font-family: "Pretendard-Medium";
+}
+
+.logo {
+    height: auto;
+    width: 50px; /* 로고 크기 조정 */
+    cursor: pointer;
+    list-style: none;  /* 마커 제거 */
+}
+
+
+.logoItem {
+    display: flex;
+    align-items: center;  /* 로고가 수직 중앙 정렬되도록 */
+    margin-right: 20px;  /* 로고와 메뉴 사이 간격을 설정 */
 }
