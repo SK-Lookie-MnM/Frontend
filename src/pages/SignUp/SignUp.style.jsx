@@ -41,7 +41,12 @@ export const CamcoderLogo = styled.img`
   height: 140.51px;
 `;
 
-export const SignUpTitle = styled.div``;
+export const SignUpTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
 export const Line = styled.div`
   width: 1131px;
