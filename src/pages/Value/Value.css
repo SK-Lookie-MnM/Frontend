@@ -1,0 +1,25 @@
+.top {
+    position: absolute;
+    top: 156px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 638px;
+    width: 100%;
+}
+
+.main {
+    position: absolute;
+    top: 784px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 4122px;
+    width: 100%;
+}
+
+.button3 {
+    position: absolute;
+    top: 4490px;
+    left: 730px;
+    height: 69px;
+    width: 252px;
+}

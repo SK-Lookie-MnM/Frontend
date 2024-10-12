@@ -1,5 +1,9 @@
 import './mainpage.css';
-import mainHeaderBackground from '../../assets/mainpage/mainheader_background.png';
+import mainHeaderBackground1 from '../../assets/mainpage/mainheader_background.png';
+import mainHeaderBackground2 from '../../assets/mainpage/mainheader_bg2.jpeg';
+import mainHeaderBackground3 from '../../assets/mainpage/mainheader_bg3.jpeg';
+import mainHeaderBackground4 from '../../assets/mainpage/mainheader_bg4.jpeg';
+import mainHeaderBackground5 from '../../assets/mainpage/mainheader_bg5.jpeg';
 import mainHeaderText from '../../assets/mainpage/mainheader_text.png';
 import coderButton2 from '../../assets/mainpage/coder_button2.png';
 import mainAbout from '../../assets/mainpage/main_about.png';
@@ -20,13 +24,52 @@ import getStarted from '../../assets/mainpage/getstarted.png';
 import coderButton from '../../assets/mainpage/coder_button.png';
 import group2609308 from '../../assets/mainpage/Group 2609308.png';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import {Navigation, Pagination, Scrollbar, A11y, Autoplay} from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
+
 const MainPage = () => {
     return (
         <div className="main-container">
             <div>
-                <img src={mainHeaderBackground} className="mainheader_bg" alt="Main Header Background"/>
+                <Swiper
+                    modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}  // Autoplay 모듈 추가
+                    spaceBetween={50}
+                    slidesPerView={1}
+                    navigation
+                    pagination={{ clickable: true }}
+                    autoplay={{  // 5초마다 자동으로 슬라이드 변경
+                        delay: 5000,  // 5초
+                        disableOnInteraction: false  // 상호작용 후에도 자동 재생 유지
+                    }}
+                    allowTouchMove={false}  // 터치/드래그로 슬라이드를 넘기지 않게 함
+                    onSwiper={(swiper) => console.log(swiper)}
+                    onSlideChange={() => console.log('slide change')}
+                >
+
+                <SwiperSlide>
+                        <img src={mainHeaderBackground1} className="mainheader_bg1" alt="bg1"/>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img src={mainHeaderBackground2} className="mainheader_bg2" alt="bg2"/>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img src={mainHeaderBackground3} className="mainheader_bg3" alt="bg3"/>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img src={mainHeaderBackground4} className="mainheader_bg4" alt="bg4"/>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img src={mainHeaderBackground5} className="mainheader_bg5" alt="bg5"/>
+                    </SwiperSlide>
+                </Swiper>
                 <img src={mainHeaderText} className="mainheader_text" alt="Main Header Text"/>
-                <a href="https://forms.gle/YqSgkjhDM86mjX9N8" target="_blank" rel="noopener noreferrer" className="coder_bt2">
+                <a href="https://forms.gle/YqSgkjhDM86mjX9N8" target="_blank" rel="noopener noreferrer"
+                   className="coder_bt2">
                     <img src={coderButton2} className="button-img" alt="Coder Button 2"/>
                 </a>
             </div>
