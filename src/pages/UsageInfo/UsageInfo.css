@@ -1,0 +1,52 @@
+.header {
+    position: absolute;
+    top: 137px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 647px;
+    width: 100%;
+}
+
+.button {
+    position: absolute;
+    top: 564px;
+    left: 400px;
+    height: 52px;
+    width: 305px;
+}
+
+.info_header{
+    position: absolute;
+    top: 942px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 414px;
+    width: 888px;
+}
+
+.info {
+    position: absolute;
+    top: 1427px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 1915px;
+    width: 1586px;
+}
+
+.get {
+    position: absolute;
+    top: 3342px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 599px;
+    width: 1920px;
+}
+
+.button2 {
+    position: absolute;
+    top: 3472px;
+    left: 49%;
+    transform: translate(-50%, 0);
+    height: 69px;
+    width: 252px;
+}
