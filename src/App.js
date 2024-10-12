@@ -9,17 +9,15 @@ import UsageInfo from "./pages/UsageInfo/UsageInfo";
 
 function App() {
     return (
-        <div className="app-container">
+        <div className="App">
             <Navbar />
-            <div className="content">
-                <Routes>
-                    <Route path="/" element={<MainPage />} />
-                    <Route path="/signUp" element={<SignUp />} />
-                    <Route path="/login" />
-                    <Route path="/value" element={<Value />} />
-                    <Route path="/usageInfo" element={<UsageInfo />} />
-                </Routes>
-            </div>
+            <Routes>
+                <Route path="/" element={<MainPage />} />
+                <Route path="/signUp" element={<SignUp />} />
+                <Route path="/login" />
+                <Route path="/value" element={<Value />} />
+                <Route path="/usageInfo" element={<UsageInfo />} />
+            </Routes>
             <Footer />
         </div>
     );
