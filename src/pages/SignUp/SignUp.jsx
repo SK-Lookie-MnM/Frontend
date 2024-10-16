@@ -23,7 +23,7 @@ import {
   SignUpSection,
   SignUpTitle,
   Warn,
-} from "./SignUp.style";
+} from "./SignUp.style.jsx";
 
 import { FaCheck } from "react-icons/fa6";
 import logo from "../../assets/icon/Signup/Group 2609363.png";
@@ -108,104 +108,102 @@ const SignUp = () => {
   };
 
   return (
-    <div>
-      <SignUpSection>
-        <SignUpContents>
-          <SignUpHeader>
-            <CamcoderLogo src={logo} alt="MNM Logo"></CamcoderLogo>
-            <SignUpTitle>
-              <b>회원가입</b>
-              <p></p>캠코더에 오신걸 환영합니다.
-            </SignUpTitle>
-            <Line></Line>
-          </SignUpHeader>
-          <SignUpForm>
-            <InputField>
-              <Label>1. 사용하실 아이디와 비밀번호를 설정해주세요.</Label>
-              <IdInputContainer>
-                <InputContainer>
-                  <Input
-                    type="text"
-                    placeholder="아이디 입력"
-                    value={userId}
-                    onChange={(e) => checkId(e.target.value.trim())}
-                    isCompleted={isCheckUserId}
-                  />
-                  <IconWrapper isCompleted={isCheckUserId}>
-                    <FaCheck />
-                  </IconWrapper>
-                </InputContainer>
-                <Warn>{userIdMessage}</Warn>
-              </IdInputContainer>
-              <PasswordInputContainer>
-                <InputContainer>
-                  <Input
-                    type="password"
-                    placeholder="비밀번호 입력"
-                    value={password}
-                    onChange={(e) => checkPassword(e.target.value.trim())}
-                    isCompleted={isCheckPassword}
-                  />
-                  <IconWrapper isCompleted={isCheckPassword}>
-                    <FaCheck />
-                  </IconWrapper>
-                </InputContainer>
-                <Warn>{passwordMessage}</Warn>
-              </PasswordInputContainer>
-            </InputField>
-            <InputField>
-              <Label>2. 이름을 설정해주세요.</Label>
-              <NameInputContainer>
-                <InputContainer>
-                  <Input
-                    type="text"
-                    placeholder="이름 입력"
-                    value={name}
-                    onChange={(e) => checkName(e.target.value.trim())}
-                    isCompleted={isCheckName}
-                  />
-                  <IconWrapper isCompleted={isCheckName}>
-                    <FaCheck />
-                  </IconWrapper>
-                </InputContainer>
-                <Warn>{nameMessage}</Warn>
-              </NameInputContainer>
-            </InputField>
-            <InputField>
-              <Label>3. 소속대학을 선택하세요.</Label>
-              <DropdownContainer>
-                <DropdownHeader
-                  onClick={toggleDropdown}
-                  isSelected={selectedOption !== "선택하세요"}
-                >
-                  {selectedOption}
-                </DropdownHeader>
-                {isOpen && (
-                  <DropdownListContainer>
-                    {options.map((option) => (
-                      <DropdownListItem
-                        key={option}
-                        onClick={() => handleSelect(option)}
-                      >
-                        {option}
-                      </DropdownListItem>
-                    ))}
-                  </DropdownListContainer>
-                )}
-              </DropdownContainer>
-            </InputField>
-            <CheckContainer>
-              <Label>4. 회원유형을 선택하세요</Label>
-              <CheckField>
-                <Checkbox /> 일반 대학생 <Checkbox /> 팀 MNM
-                <Checkbox /> 운영진
-              </CheckField>
-            </CheckContainer>
-            <Button>캠코더 가입하기</Button>
-          </SignUpForm>
-        </SignUpContents>
-      </SignUpSection>
-    </div>
+    <SignUpSection>
+      <SignUpContents>
+        <SignUpHeader>
+          <CamcoderLogo src={logo} alt="MNM Logo"></CamcoderLogo>
+          <SignUpTitle>
+            <b>회원가입</b>
+            <p></p>캠코더에 오신걸 환영합니다.
+          </SignUpTitle>
+          <Line></Line>
+        </SignUpHeader>
+        <SignUpForm>
+          <InputField>
+            <Label>1. 사용하실 아이디와 비밀번호를 설정해주세요.</Label>
+            <IdInputContainer>
+              <InputContainer>
+                <Input
+                  type="text"
+                  placeholder="아이디 입력"
+                  value={userId}
+                  onChange={(e) => checkId(e.target.value.trim())}
+                  isCompleted={isCheckUserId}
+                />
+                <IconWrapper isCompleted={isCheckUserId}>
+                  <FaCheck />
+                </IconWrapper>
+              </InputContainer>
+              <Warn>{userIdMessage}</Warn>
+            </IdInputContainer>
+            <PasswordInputContainer>
+              <InputContainer>
+                <Input
+                  type="password"
+                  placeholder="비밀번호 입력"
+                  value={password}
+                  onChange={(e) => checkPassword(e.target.value.trim())}
+                  isCompleted={isCheckPassword}
+                />
+                <IconWrapper isCompleted={isCheckPassword}>
+                  <FaCheck />
+                </IconWrapper>
+              </InputContainer>
+              <Warn>{passwordMessage}</Warn>
+            </PasswordInputContainer>
+          </InputField>
+          <InputField>
+            <Label>2. 이름을 설정해주세요.</Label>
+            <NameInputContainer>
+              <InputContainer>
+                <Input
+                  type="text"
+                  placeholder="이름 입력"
+                  value={name}
+                  onChange={(e) => checkName(e.target.value.trim())}
+                  isCompleted={isCheckName}
+                />
+                <IconWrapper isCompleted={isCheckName}>
+                  <FaCheck />
+                </IconWrapper>
+              </InputContainer>
+              <Warn>{nameMessage}</Warn>
+            </NameInputContainer>
+          </InputField>
+          <InputField>
+            <Label>3. 소속대학을 선택하세요.</Label>
+            <DropdownContainer>
+              <DropdownHeader
+                onClick={toggleDropdown}
+                isSelected={selectedOption !== "선택하세요"}
+              >
+                {selectedOption}
+              </DropdownHeader>
+              {isOpen && (
+                <DropdownListContainer>
+                  {options.map((option) => (
+                    <DropdownListItem
+                      key={option}
+                      onClick={() => handleSelect(option)}
+                    >
+                      {option}
+                    </DropdownListItem>
+                  ))}
+                </DropdownListContainer>
+              )}
+            </DropdownContainer>
+          </InputField>
+          <CheckContainer>
+            <Label>4. 회원유형을 선택하세요</Label>
+            <CheckField>
+              <Checkbox /> 일반 대학생 <Checkbox /> 팀 MNM
+              <Checkbox /> 운영진
+            </CheckField>
+          </CheckContainer>
+          <Button>캠코더 가입하기</Button>
+        </SignUpForm>
+      </SignUpContents>
+    </SignUpSection>
   );
 };
 
