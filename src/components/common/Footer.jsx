@@ -10,7 +10,7 @@ import {
   FooterWrapper,
   Insta,
   Line,
-  SK_LOOKIE_MNM,
+  SkLookieMnm,
 } from "./Footer.css.jsx";
 
 const Footer = () => {
@@ -43,7 +43,7 @@ const Footer = () => {
         </a>
       </ContactContainer>
       <Line></Line>
-      <SK_LOOKIE_MNM>@2024 SK LOOKIE MNM</SK_LOOKIE_MNM>
+      <SkLookieMnm>@2024 SK LOOKIE MNM</SkLookieMnm>
     </FooterWrapper>
   );
 };

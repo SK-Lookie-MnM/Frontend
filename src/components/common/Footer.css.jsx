@@ -20,6 +20,7 @@ export const Line = styled.div`
 export const ContactContainer = styled.div`
   display: flex;
   justify-content: flex-end; /* 아이템들을 오른쪽에 정렬 */
+  padding-right: 30px;
   gap: 47px; /* 아이템들 간의 간격 조정 */
   align-items: center; /* 수직 가운데 정렬 */
   width: 100%; /* 부모 요소의 전체 넓이를 차지하도록 설정 */
@@ -45,7 +46,7 @@ export const Clip = styled.img`
   width: 25px;
 `;
 
-export const SK_LOOKIE_MNM = styled.p`
+export const SkLookieMnm = styled.p`
   font: Pretendard;
   font-size: 15px;
   color: rgba(255, 255, 255, 1);

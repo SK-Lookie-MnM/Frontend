@@ -1,5 +1,6 @@
 .nav {
   display: flex;
+  font-family: "Pretendard-Medium";
   background-color: #0c4536;
   padding: 20px;
   list-style: none; /* 마커 제거 */
@@ -80,9 +81,6 @@
   src: url("../../fonts/Pretendard-Medium.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
-}
-body {
-  font-family: "Pretendard-Medium";
 }
 
 .logo {
