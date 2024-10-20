@@ -11,7 +11,7 @@ export const SignUpSection = styled.div`
 
 export const SignUpContents = styled.div`
   display: flex;
-  width: 1131px;
+  width: 100%;
   padding: 0px 166px;
   justify-content: center;
   flex-direction: column;
@@ -49,7 +49,7 @@ export const SignUpTitle = styled.div`
 `;
 
 export const Line = styled.div`
-  width: 1131px;
+  width: 100%;
   border-bottom: 3px solid rgba(65, 79, 58, 1); /* 두꺼운 선 */
 `;
 
