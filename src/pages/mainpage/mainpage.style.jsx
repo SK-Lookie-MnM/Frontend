@@ -567,6 +567,7 @@ export const TogetherWrapper = styled.div`
   height: 599px;
   background-color: rgba(232, 238, 234, 1);
   position: relative; /* 위치 설정 */
+  clip-path: inset(0px 0px 1px 0px);
 `;
 export const TogetherContainer = styled.div`
   display: flex;
@@ -621,8 +622,8 @@ export const DotPatternContainer = styled.div`
   width: 318px;
   height: 205px;
   position: absolute;
-  top: -5px;
-  left: 40px;
+  top: -67px;
+  left: 350px;
   z-index: 1;
 `;
 
@@ -632,6 +633,7 @@ export const Dot1 = styled.div`
   background-color: rgba(255, 255, 255, 1);
   border-radius: 50%; /* 도트를 원형으로 설정 */
 `;
+
 export const DotPatternContainer2 = styled.div`
   display: grid;
   grid-template-columns: repeat(7, 10px); /* 가로 7개, 각 도트의 너비는 10px */
@@ -641,8 +643,8 @@ export const DotPatternContainer2 = styled.div`
   width: 318px;
   height: 205px;
   position: absolute;
-  bottom: -5px;
-  right: 40px;
+  bottom: -8px;
+  right: -18px;
   z-index: 1;
 `;
 
