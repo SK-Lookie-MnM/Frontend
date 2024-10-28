@@ -564,10 +564,10 @@ export const TogetherWrapper = styled.div`
   justify-content: center;
   align-items: center; /* 수직 가운데 정렬을 위해 추가 */
   width: 100%;
-  height: 599px;
+  height: 600px;
   background-color: rgba(232, 238, 234, 1);
   position: relative; /* 위치 설정 */
-  clip-path: inset(0px 0px 1px 0px);
+  clip-path: inset(0px 0px 0px 0px);
 `;
 export const TogetherContainer = styled.div`
   display: flex;
