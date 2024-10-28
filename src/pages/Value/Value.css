@@ -1,68 +1,3 @@
-/*body {*/
-/*    background-image: url("../../../src/assets/Value/background.png");*/
-/*}*/
-
-/*.info {*/
-/*    position: relative;*/
-/*    top: 400px;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    align-items: center;*/
-/*    text-align: center;*/
-/*}*/
-
-/*.title_1 {*/
-/*    font-size: 30px;*/
-/*    color: #23443D;*/
-/*    margin: 20px 0;*/
-/*}*/
-
-/*.hr_1, .hr_2 {*/
-/*    width: 80%;*/
-/*    border: 0.5px solid;*/
-/*    margin: 30px 0;*/
-/*}*/
-
-/*.hr_1 {*/
-/*    border-color: #000000;*/
-/*}*/
-
-/*.hr_2 {*/
-/*    border-color: #8B8B8B;*/
-/*}*/
-
-/*.info1, .info2, .info3, .info4 {*/
-/*    font-size: 20px;*/
-/*    color: #000000;*/
-/*    margin: 20px 0;*/
-/*    font-weight: 200;*/
-/*}*/
-
-/*strong {*/
-/*    color: #23443D;*/
-/*    font-weight: 400;*/
-/*}*/
-
-/*.logo {*/
-/*    max-width: 100%;*/
-/*    height: auto;*/
-/*    margin-top: 250px;*/
-/*}*/
-
-/*.title_2 {*/
-/*    position: relative;*/
-/*    top: 700px;*/
-/*    font-size: 24px;*/
-/*    color: #000000;*/
-/*    margin: 20px 0;*/
-/*    text-align: center;*/
-/*}*/
-
-/*.info2 {*/
-/*    position: relative;*/
-/*    top: 3000px;*/
-/*}*/
-
 body {
     background-image: url("../../../src/assets/Value/background.png");
 }
@@ -98,10 +33,20 @@ body {
 }
 
 .info-text {
-    font-size: 20px;
-    color: #000000;
+    font-size: 15px;
     margin: 20px 0;
     font-weight: 200;
+}
+
+.info-text p {
+    margin-bottom: 5px; /* 각 문단 간 간격 */
+    line-height: 1; /* 줄 높이 설정 */
+}
+
+.info-text p:nth-child(4),
+.info-text p:nth-child(6),
+.info-text p:nth-child(8) {
+    margin-bottom: 50px !important; /* 우선순위 높이기 */
 }
 
 strong {
@@ -112,7 +57,7 @@ strong {
 .logo {
     max-width: 100%;
     height: auto;
-    margin-top: 20px;
+    margin-top: 100px;
 }
 
 .info-summary {
@@ -123,11 +68,26 @@ strong {
 .title_2 {
     font-size: 24px;
     color: #000000;
-    margin: 20px 0;
+    margin-top: 300px;
+    margin-bottom: 100px;
 }
 
 .info-img {
     max-width: 100%; /* 이미지 크기 조정 */
     height: auto;
     margin-top: 20px; /* 필요시 간격 조정 */
+}
+
+.coder {
+    text-align: center; /* 내용 가운데 정렬 */
+}
+
+.info-text2 {
+    margin-top: 300px;
+    font-size: 25px;
+}
+
+.usage-info-container1 {
+    margin-top: 100px;
+    margin-bottom: 200px;
 }
