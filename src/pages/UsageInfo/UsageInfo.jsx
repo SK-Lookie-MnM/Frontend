@@ -1,27 +1,28 @@
 import './UsageInfo.css';
-import header from '../../assets/UsageInfo/header.png';
-import info_header from '../../assets/UsageInfo/info_header.png';
-import info from '../../assets/UsageInfo/info.png';
-import button from '../../assets/UsageInfo/button.png';
-import get from '../../assets/UsageInfo/getstarted.png';
-import button2 from '../../assets/UsageInfo/button2.png'
-
-
+import title from '../../../src/assets/UsageInfo/title.png';
+import check from '../../../src/assets/UsageInfo/checkmark.png'
 const UsageInfo = () => {
     return (
         <div>
-            <img src={header} className="header"/>
-            <a href="https://www.instagram.com/mnm_ddsl/?igsh=MWIydjVkcW40ZW8xaw%3D%3D" target="_blank"
-               rel="noopener noreferrer" className="button-link">
-                <img src={button} className="button" alt="Map Button"/>
-            </a>
-            <img src={info_header} className="info_header"/>
-            <img src={info} className="info"/>
-            <img src={get} className="get"/>
-            <a href="https://forms.gle/5KKR1ojquKTHSmc18" target="_blank"
-               rel="noopener noreferrer" className="button-link2">
-                <img src={button2} className="button2" alt="buy Button"/>
-            </a>
+            <div className="joincamcoder">
+                <img src={title} className="title1"/>
+
+                <div className="image-text-container">
+                    <div className="image-text-item">
+                        <img src={check} className="img" alt="이미지 1"/>
+                        <p className="info-text">한 달간 이용 가능한 횟수권을 구독하세요.</p>
+                    </div>
+                    <div className="image-text-item">
+                        <img src={check} className="img" alt="이미지 2"/>
+                        <p className="info-text">1회 이용 시 캡슐 1개를 가져가실 수 있습니다.</p>
+                    </div>
+                    <div className="image-text-item">
+                        <img src={check} className="img" alt="이미지 3"/>
+                        <p className="info-text">월 9,000원의 이용료로 다양한 친환경 제품을 만나보세요!</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
     );
 };
