@@ -5,7 +5,7 @@ export const MainWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 100vw;
 `;
 
 export const MainHeaderSlide = styled.div`
@@ -623,7 +623,7 @@ export const DotPatternContainer = styled.div`
   height: 205px;
   position: absolute;
   top: -67px;
-  left: 350px;
+  left: 150px;
   z-index: 1;
 `;
 
