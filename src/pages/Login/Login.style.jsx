@@ -40,12 +40,23 @@ export const IdInputbox = styled.div`
   margin-top: 12.5px;
 `;
 export const IdInput = styled.input`
+  display: flex;
   width: 100%;
   height: 66px;
+  align-items: center;
+  justify-content: center;
   border-radius: 72px;
-
   background-color: rgba(235, 235, 235, 1);
   border: 0.8px solid rgba(139, 139, 139, 1); /* 원하는 두께, 스타일, 색상 */
+  padding: 30px;
+  font-family: "Pretendard-Regular"; /* placeholder 글꼴 설정 */
+  font-size: 22px;
+
+  &::placeholder {
+    font-family: "Pretendard-Regular"; /* placeholder 글꼴 설정 */
+    font-size: 22px;
+    color: rgba(167, 164, 164, 1);
+  }
 `;
 
 export const PwdInputbox = styled.div`
@@ -60,8 +71,18 @@ export const PwdInput = styled.input`
   width: 100%;
   height: 66px;
   border-radius: 72px;
+  justify-content: center;
   background-color: rgba(235, 235, 235, 1);
   border: 0.8px solid rgba(139, 139, 139, 1); /* 원하는 두께, 스타일, 색상 */
+  padding: 30px;
+  font-family: "Pretendard-Regular"; /* placeholder 글꼴 설정 */
+  font-size: 22px;
+
+  &::placeholder {
+    font-family: "Pretendard-Regular"; /* placeholder 글꼴 설정 */
+    font-size: 22px;
+    color: rgba(167, 164, 164, 1);
+  }
 `;
 export const LoginCheckBoxContainer = styled.div`
   display: flex;

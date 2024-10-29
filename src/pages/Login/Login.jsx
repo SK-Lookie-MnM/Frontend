@@ -23,10 +23,10 @@ export const Login = () => {
       </WelcomTitle>
       <LoginFormContainer>
         <IdInputbox>
-          <IdInput></IdInput>
+          <IdInput placeholder="Enter Your Id"></IdInput>
         </IdInputbox>
         <PwdInputbox>
-          <PwdInput></PwdInput>
+          <PwdInput placeholder="Enter Your Password"></PwdInput>
         </PwdInputbox>
         <LoginCheckBoxContainer>
           <MaintainLoginCheckBox>
