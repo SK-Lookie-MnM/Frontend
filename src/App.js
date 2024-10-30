@@ -3,6 +3,7 @@ import SignUp from "./pages/SignUp/SignUp";
 import Value from "./pages/Value/Value";
 import UsageInfo from "./pages/UsageInfo/UsageInfo";
 import MainPage from "./pages/mainpage/mainpage";
+import { Login } from "./pages/Login/Login";
 import Article from "./pages/Articles/Articles"
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/signUp" element={<SignUp />} />
-        <Route path="/login" />
+        <Route path="/login" element={<Login />} />
         <Route path="/value" element={<Value />} />
         <Route path="/usageInfo" element={<UsageInfo />} />
           <Route path="/Articles" element={<Article />} />
