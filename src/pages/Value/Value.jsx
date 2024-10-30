@@ -1,6 +1,9 @@
 import './Value.css';
 import logo from '../../../src/assets/Value/logo.png';
-import infoImage from '../../../src/assets/Value/info2.png'; // 이미지 변수명 수정
+import info_img1 from '../../../src/assets/Value/image_1.png'
+import info_img2 from '../../../src/assets/Value/image_2.png'
+import info_img3 from '../../../src/assets/Value/image_3.png'
+import info_img4 from '../../../src/assets/Value/image_4.png'
 
 const Value = () => {
     const ButtonClick2 = () => {
@@ -21,9 +24,10 @@ const Value = () => {
                     <p>그래서 저희는<strong>&quot;에코 실천이 무겁지 않고, 더 재미있게 다가가면 어떨까?&quot;</strong>라는 발상을 했습니다. </p>
                     <p>그렇게 탄생한 것이 바로 캠코더 프로젝트입니다.</p>
                     <p>지나가다가 뽑기 기계를 통해 뽑기만 하면 재미있게 고체 세제를 뽑아 사용할 수 있는 시스템을 만들었습니다.</p>
-                    <p>한 번 뽑으면 환경을 위한 한 걸음을 내딛는 거죠. </p>
 
-                    <p>이렇게 캠퍼스 속 작은 일상에서부터 즐겁게 에코 실천을 시작하게 하고 싶었습니다. </p>
+                    <p><strong>한 번 뽑으면 환경을 위한 한 걸음을 내딛는 거죠. </strong></p>
+                    <p><strong>이렇게 캠퍼스 속 작은 일상에서부터 즐겁게 에코 실천을 시작하게 하고 싶었습니다. </strong></p>
+
                     <p>우리의 목표는 단순한 제품 판매를 넘어서 </p>
                     <p>학생들이 대학생활 속에서 지속 가능한 소비를 즐겁게 경험하고,</p>
                     <p>그 영향력이 사회로까지 확장되는 것입니다.</p>
@@ -31,13 +35,34 @@ const Value = () => {
                 <img src={logo} alt="로고" className="logo"/>
             </div>
 
-            <div className="info-summary"> {/* info2 클래스 이름 변경 */}
+            <div className="info-summary">
                 <p className="title_2">
                     지속 가능한 미래를 위해<br/>
-                    <span style={{color: "#23443D"}}>캠퍼스 프로젝트 ver 1.0</span>
-                    은 수익 기부 프로젝트로 함께 변화를 만들어가고 있습니다.
+                    <span style={{color: "#23443D"}}>캠퍼스 프로젝트 ver 1.0</span> 은 수익 기부 프로젝트로 함께 변화를 만들어가고 있습니다.
                 </p>
-                <img src={infoImage} className="info-img" alt="Info Image"/> {/* 이미지 변수명 변경 및 alt 추가 */}
+                <div className="info_top">
+                    <img src={info_img1} className="info_img1"/>
+                    <img src={info_img2} className="info_img2"/>
+                    <p className="info_top_">
+                        <span className="info_top_title">수익 기부 프로젝트<br/></span>
+                        진행한 리필 스테이션 수익은 모두 기부<br/>
+                        지역 어린이집 학생들을 대상으로 캠페인 진행<br/>
+                        대학교를 넘어 지역 커뮤니티까지 환경 보호 문화 확산<br/>
+                        지속 가능한 환경 보호의 선순환 형성을 목표로 캠페인 진행
+                    </p>
+                </div>
+                <div className="info_bottom">
+                    <p className="info_bottom_">
+                        <span className="info_bottom_title">캠코더 X 동맹연합<br/></span>
+                        동덕여자대학교, 서울여자대학교 진행 완료<br/>
+                        동덕여자대학교 환경지기 연합 체결<br/>
+                        세종대학교 THE EYES 연합 체결<br/>
+                        본사와 계열사 연합 구조<br/>
+                        캠코더 설치 및 문화 확산
+                    </p>
+                    <img src={info_img3} className="info_img3"/>
+                    <img src={info_img4} className="info_img4"/>
+                </div>
             </div>
 
             <div className="coder">

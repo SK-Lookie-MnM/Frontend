@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'Hakgyoansim-Dunggeunmiso';
+    src: url('../../fonts/Hakgyoansim-Dunggeunmiso-TTF-B.ttf') format('truetype');
+}
 .joincamcoder {
     background-color: #E8EEEA;
     width: 100%;
@@ -18,13 +22,14 @@
     display: flex;
     justify-content: center; /* 수평 중앙 정렬 */
     align-items: center; /* 수직 중앙 정렬 */
-    width: 50%; /* 오른쪽 영역 너비 설정 */
+    width: 30%;
 }
 
 .title1 {
-    width: 406px;
+    font-size: 55px;
+    font-family: "Hakgyoansim-Dunggeunmiso";
     margin-bottom: 20px; /* 제목과 다음 요소 간의 간격 설정 */
-    margin-top: 300px;
+    margin-top: 50px;
     margin-left: 200px;
 }
 
@@ -56,19 +61,12 @@
     white-space: nowrap; /* 텍스트가 줄 바뀌지 않도록 설정 */
 }
 
-.square {
-    width: 432px;
-    height: 250px;
-    background-color: #414F3A;
-    margin-right: 400px;
-    z-index: 1;
-    margin-bottom: 100px;
-}
-
 .image {
-    width: 432px;
-    height: 250px;
+    width: 500px;
+    height: 300px;
+    margin-top: 150px;
     z-index: 2;
+    margin-left: 150px;
 }
 
 .usage-info-container {
@@ -181,12 +179,14 @@
     text-align: center;
     font-weight: bold;
     margin-top: 20px; /* 버튼과 텍스트 간의 간격 설정 */
+    z-index: 2;
 }
 .title3 {
     font-size: 30px; /* 글자 크기 증가 (필요에 따라 조정) */
     font-weight: bold; /* 글자 두껍게 */
     color: #000; /* 텍스트 색상 (필요에 따라 변경) */
     margin-top: 50px;
+    z-index: 2;
 }
 
 .info2 {
@@ -194,5 +194,20 @@
     margin-top: 50px;
     font-size: 25px;
     color: #23443D;
+    z-index: 2;
 }
 
+.dot1, .dot2 {
+    width: 318px;
+    height: 205px;
+}
+
+.dot1 {
+    margin-top: 500px;
+    margin-right: 1200px;
+}
+
+.dot2 {
+    margin-left: 1370px;
+    margin-bottom: 350px;
+}

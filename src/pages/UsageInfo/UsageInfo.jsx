@@ -1,7 +1,8 @@
 import './UsageInfo.css';
-import title from '../../../src/assets/UsageInfo/title.png';
 import check from '../../../src/assets/UsageInfo/checkmark.png';
 import image from '../../../src/assets/UsageInfo/image.png';
+import dot1 from '../../../src/assets/UsageInfo/dot1.png'
+import dot2 from '../../../src/assets/UsageInfo/dot2.png'
 import { useNavigate } from 'react-router-dom'; // useNavigate를 사용하여 내부 링크 연결
 
 const UsageInfo = () => {
@@ -18,8 +19,10 @@ const UsageInfo = () => {
     return (
         <div>
             <div className="joincamcoder">
-                <div className="left-container"> {/* 왼쪽 컨테이너 */}
-                    <img src={title} className="title1" alt="타이틀"/>
+                <div className="left-container">
+                    <p className="title1">
+                        Join <span style={{color: '#23443D'}}>Camcoder!</span>
+                    </p>
                     <div className="image-text-container">
                         <div className="image-text-item">
                             <img src={check} className="img" alt="이미지 1"/>
@@ -31,7 +34,7 @@ const UsageInfo = () => {
                         </div>
                         <div className="image-text-item">
                             <img src={check} className="img" alt="이미지 3"/>
-                            <p className="info-text">월 9,000원의 이용료로 다양한 친환경 제품을 만나보세요!</p>
+                            <p className="info-text">월 5,000원의 이용료로 다양한 친환경 제품을 만나보세요!</p>
                         </div>
                     </div>
                     <div className="usage-info-container">
@@ -40,14 +43,11 @@ const UsageInfo = () => {
                         </button>
                     </div>
                 </div>
-                <div className="right-container">
-                    <img src={image} className="image" alt="이미지"/>
-                    <div className="square"></div>
-                </div>
+                <img src={image} className="image" alt="이미지"/>
             </div>
 
             <div className="ourSystem">
-                <hr className="hr1"/>
+            <hr className="hr1"/>
                 <p className="title2">• Our System •</p>
                 <p className="info"> 횟수권 구매 후 대학 내 설치된 캠코더 스테이션에 방문합니다.<br/>
                     사전에 고지한 전용주화를 이용해 캡슐 기계를 사용해주세요!
@@ -60,13 +60,15 @@ const UsageInfo = () => {
             </div>
 
             <div className="getstarted">
+                <img src={dot1} className="dot1" alt="Dot 1"/>
                 <div className="usage-info-container">
                     <button className="button2" onClick={ButtonClick2}>
                         결제하기
                     </button>
                 </div>
                 <p className="title3">Get Started!</p>
-                <p className="info2">캠코더를 원하는 어느 대학이든 MNM은 두 팔 벌려 환영입니다! <br/>같이 캠코더 해요!</p>
+                <p className="info2">캠코더를 이용해 손쉽게 누구나 환경보호에 동참할 수 있어요<br/>같이 캠코더 해요!</p>
+                <img src={dot2} className="dot2" alt="Dot 2"/>
             </div>
         </div>
     );
