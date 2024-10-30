@@ -40,7 +40,7 @@ export const Login = () => {
       <LoginBtn>Login</LoginBtn>
       <SignUpMent>
         첫 방문이신가요?{" "}
-        <StyledLink to={`/singup`}>회원가입하러가기</StyledLink>
+        <StyledLink to={`/signUp`}>회원가입하러가기</StyledLink>
       </SignUpMent>
     </LoginWrapper>
   );
