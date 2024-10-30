@@ -10,15 +10,17 @@ import {
   PwdInput,
   PwdInputbox,
   SignUpMent,
+  StyledLink,
   WelcomTitle,
 } from "./Login.style";
-import { Link } from "react-router-dom";
 
 export const Login = () => {
   return (
     <LoginWrapper>
       <WelcomTitle>
-        <p>Welcome to camcoder</p>
+        <p>
+          Welcome to <a>camcoder !</a>
+        </p>
         <p>캠코더의 다양한 서비스 이용을 위해 로그인을 해주세요.</p>
       </WelcomTitle>
       <LoginFormContainer>
@@ -37,7 +39,8 @@ export const Login = () => {
       </LoginFormContainer>
       <LoginBtn>Login</LoginBtn>
       <SignUpMent>
-        첫 방문이신가요? <Link to={`/singup`}>회원가입 하러가기</Link>
+        첫 방문이신가요?{" "}
+        <StyledLink to={`/singup`}>회원가입하러가기</StyledLink>
       </SignUpMent>
     </LoginWrapper>
   );
