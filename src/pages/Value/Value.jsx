@@ -41,8 +41,8 @@ const Value = () => {
                     <span style={{color: "#23443D"}}>캠퍼스 프로젝트 ver 1.0</span> 은 수익 기부 프로젝트로 함께 변화를 만들어가고 있습니다.
                 </p>
                 <div className="info_top">
-                    <img src={info_img1} className="info_img1"/>
-                    <img src={info_img2} className="info_img2"/>
+                    <img src={info_img1} className="info_img1" alt="img"/>
+                    <img src={info_img2} className="info_img2" alt="img"/>
                     <p className="info_top_">
                         <span className="info_top_title">수익 기부 프로젝트<br/></span>
                         진행한 리필 스테이션 수익은 모두 기부<br/>
@@ -60,8 +60,8 @@ const Value = () => {
                         본사와 계열사 연합 구조<br/>
                         캠코더 설치 및 문화 확산
                     </p>
-                    <img src={info_img3} className="info_img3"/>
-                    <img src={info_img4} className="info_img4"/>
+                    <img src={info_img3} className="info_img3" alt="img"/>
+                    <img src={info_img4} className="info_img4" alt="img"/>
                 </div>
             </div>
 
