@@ -4,18 +4,23 @@ import info_img1 from '../../../src/assets/Value/image_1.png'
 import info_img2 from '../../../src/assets/Value/image_2.png'
 import info_img3 from '../../../src/assets/Value/image_3.png'
 import info_img4 from '../../../src/assets/Value/image_4.png'
+import banner from '../../../src/assets/Value/banner.png'
 
 const Value = () => {
     const ButtonClick2 = () => {
         window.location.href = "https://forms.gle/v8dXGE9tii7oV22M7";
     }
-
     return (
         <div className="value">
+            <div className="banner">
+                <img src={banner} className="banner_bg" alt="banner"/>
+                <p className="banner-text">LESS BUT BETTER <br/>
+                    환경을 위해 지속가능한 혁신적 대안을 찾아내다</p>
+            </div>
             <div className="info">
-                <hr className="hr_1" />
+                <hr className="hr_1"/>
                 <p className="title_1">Our Story</p>
-                <hr className="hr_2" />
+                <hr className="hr_2"/>
                 <div className="info-text">
                     <p>대학 시절, 누구나 공감하듯 학교 내의 자원들을 더 쉽고 편리하게 이용하며</p>
                     <p>Eco-Friendly한 라이프 스타일을 자연스럽게 실천하길 바랐습니다.</p>
