@@ -47,7 +47,7 @@ export const Clip = styled.img`
 `;
 
 export const SkLookieMnm = styled.p`
-  font: Pretendard;
+  font: Preten$dard;
   font-size: 15px;
   color: rgba(255, 255, 255, 1);
 `;

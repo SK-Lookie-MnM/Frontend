@@ -1,27 +1,75 @@
 import './UsageInfo.css';
-import header from '../../assets/UsageInfo/header.png';
-import info_header from '../../assets/UsageInfo/info_header.png';
-import info from '../../assets/UsageInfo/info.png';
-import button from '../../assets/UsageInfo/button.png';
-import get from '../../assets/UsageInfo/getstarted.png';
-import button2 from '../../assets/UsageInfo/button2.png'
-
+import check from '../../../src/assets/UsageInfo/checkmark.png';
+import image from '../../../src/assets/UsageInfo/image.png';
+import dot1 from '../../../src/assets/UsageInfo/dot1.png'
+import dot2 from '../../../src/assets/UsageInfo/dot2.png'
+import { useNavigate } from 'react-router-dom'; // useNavigate를 사용하여 내부 링크 연결
 
 const UsageInfo = () => {
+    const navigate = useNavigate(); // navigate 객체 생성
+
+    const handleButtonClick = () => {
+        navigate('/univMap'); // 버튼 클릭 시 내부 링크로 이동
+    };
+
+    const ButtonClick2 = () => {
+        window.location.href = "https://forms.gle/hY4Ngh2EechEs3nh9";
+    }
+
     return (
         <div>
-            <img src={header} className="header"/>
-            <a href="https://www.instagram.com/mnm_ddsl/?igsh=MWIydjVkcW40ZW8xaw%3D%3D" target="_blank"
-               rel="noopener noreferrer" className="button-link">
-                <img src={button} className="button" alt="Map Button"/>
-            </a>
-            <img src={info_header} className="info_header"/>
-            <img src={info} className="info"/>
-            <img src={get} className="get"/>
-            <a href="https://forms.gle/5KKR1ojquKTHSmc18" target="_blank"
-               rel="noopener noreferrer" className="button-link2">
-                <img src={button2} className="button2" alt="buy Button"/>
-            </a>
+            <div className="joincamcoder">
+                <div className="left-container">
+                    <p className="title1">
+                        Join <span style={{color: '#23443D'}}>Camcoder!</span>
+                    </p>
+                    <div className="image-text-container">
+                        <div className="image-text-item">
+                            <img src={check} className="img" alt="이미지 1"/>
+                            <p className="info-text">한 달간 이용 가능한 횟수권을 구독하세요.</p>
+                        </div>
+                        <div className="image-text-item">
+                            <img src={check} className="img" alt="이미지 2"/>
+                            <p className="info-text">1회 이용 시 캡슐 1개를 가져가실 수 있습니다.</p>
+                        </div>
+                        <div className="image-text-item">
+                            <img src={check} className="img" alt="이미지 3"/>
+                            <p className="info-text">월 5,000원의 이용료로 다양한 친환경 제품을 만나보세요!</p>
+                        </div>
+                    </div>
+                    <div className="usage-info-container">
+                        <button className="rounded-button" onClick={handleButtonClick}>
+                            가까운 캠코더 맵 이동하기
+                        </button>
+                    </div>
+                </div>
+                <img src={image} className="image" alt="이미지"/>
+            </div>
+
+            <div className="ourSystem">
+            <hr className="hr1"/>
+                <p className="title2">• Our System •</p>
+                <p className="info"> 횟수권 구매 후 대학 내 설치된 캠코더 스테이션에 방문합니다.<br/>
+                    사전에 고지한 전용주화를 이용해 캡슐 기계를 사용해주세요!
+                </p>
+                <hr className="hr2"/>
+
+                <div className="square1"></div>
+                <div className="square2"></div>
+                <div className="square3"></div>
+            </div>
+
+            <div className="getstarted">
+                <img src={dot1} className="dot1" alt="Dot 1"/>
+                <div className="usage-info-container">
+                    <button className="button2" onClick={ButtonClick2}>
+                        결제하기
+                    </button>
+                </div>
+                <p className="title3">Get Started!</p>
+                <p className="info2">캠코더를 이용해 손쉽게 누구나 환경보호에 동참할 수 있어요<br/>같이 캠코더 해요!</p>
+                <img src={dot2} className="dot2" alt="Dot 2"/>
+            </div>
         </div>
     );
 };
