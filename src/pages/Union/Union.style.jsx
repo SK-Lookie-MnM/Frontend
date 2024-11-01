@@ -94,3 +94,7 @@ export const Title = styled.div`
 `;
 
 export const TextWrapper = styled.div``;
+
+export const StyledImage = styled.img`
+    width: 100px;
+`;
