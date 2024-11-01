@@ -571,7 +571,7 @@ export const TogetherWrapper = styled.div`
 `;
 export const TogetherContainer = styled.div`
   display: flex;
-  position: absoulte; /* 위치 기준 설정 */
+  position: absolute; /* 위치 기준 설정 */
   z-index: 2; /* 도트 패턴 위에 콘텐츠가 표시되도록 설정 */
   flex-direction: column;
   justify-content: center;
