@@ -34,13 +34,15 @@ export const LineLight = styled.div`
 `;
 
 export const MainContentsWrapper = styled.div`
-  display: flex;
+    flex-grow: 1; /* 남은 공간을 차지 */
+    overflow-y: auto; /* 세로 스크롤 활성화 */
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 1417px;
 `;
+
 export const MainContents = styled.div`
   display: flex;
   flex-direction: column;
@@ -68,6 +70,7 @@ export const MainWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+    min-height: 100vh; /* 화면 전체 높이를 차지 */
 `;
 
 export const TextLight = styled.a`
