@@ -6,7 +6,7 @@ import button from '../../assets/Value/button.png';
 
 const Value = () => {
     return (
-        <div>
+        <div className="value">
             <img src={top} className="top" alt="top"/>
             <img src={main} className="main" alt="main"/>
             <a href="https://forms.gle/YqSgkjhDM86mjX9N8" target="_blank" rel="noopener noreferrer"
