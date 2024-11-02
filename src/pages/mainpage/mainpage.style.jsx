@@ -46,6 +46,7 @@ export const LineLight = styled.div`
   width: 887px;
   border-top: 0.95px solid black; /* 두꺼운 선 */
 `;
+
 export const Title = styled.div`
   display: flex;
   flex-direction: column;
@@ -572,7 +573,7 @@ export const TogetherWrapper = styled.div`
 `;
 export const TogetherContainer = styled.div`
   display: flex;
-  position: absoulte; /* 위치 기준 설정 */
+  position: absolute; /* 위치 기준 설정 */
   z-index: 2; /* 도트 패턴 위에 콘텐츠가 표시되도록 설정 */
   flex-direction: column;
   justify-content: center;

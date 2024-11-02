@@ -26,7 +26,7 @@ import {
 } from "./SignUp.style.jsx";
 
 import { FaCheck } from "react-icons/fa6";
-import logo from "../../assets/icon/Signup/Group 2609363.png";
+import logo from "../../assets/icon/Signup/Group2609363.png";
 import { useState } from "react";
 
 const SignUp = () => {

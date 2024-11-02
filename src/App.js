@@ -5,6 +5,7 @@ import UsageInfo from "./pages/UsageInfo/UsageInfo";
 import MainPage from "./pages/mainpage/mainpage";
 import { Login } from "./pages/Login/Login";
 import Article from "./pages/Articles/Articles"
+import Union from "./pages/Union/Union";
 import BM from "./pages/BM/BM";
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/value" element={<Value />} />
+        <Route path="/union" element={<Union />} />
         <Route path="/usageInfo" element={<UsageInfo />} />
         <Route path="/Articles" element={<Article />} />
         <Route path="/bm" element={<BM />} />
