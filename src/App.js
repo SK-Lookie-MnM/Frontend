@@ -7,6 +7,7 @@ import { Login } from "./pages/Login/Login";
 import Article from "./pages/Articles/Articles"
 import Union from "./pages/Union/Union";
 import BM from "./pages/BM/BM";
+import FAQ from "./pages/FAQ/FAQ";
 function App() {
   return (
     <div className="content">
@@ -19,6 +20,7 @@ function App() {
         <Route path="/usageInfo" element={<UsageInfo />} />
         <Route path="/Articles" element={<Article />} />
         <Route path="/bm" element={<BM />} />
+        <Route path="/faq" element={<FAQ />} />
       </Routes>
     </div>
   );
