@@ -5,7 +5,7 @@ export const MainWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 100vw;
 `;
 
 export const MainHeaderSlide = styled.div`
@@ -55,8 +55,9 @@ export const Title = styled.div`
 export const TextWrapper = styled.div``;
 
 export const TextLight = styled.a`
-  font-family: "Pretendard-Light";
-  font-size: 34.51px;
+    font-family: "Pretendard-Light";
+    font-size: 25px;
+    color: #8B8B8B;
 `;
 
 export const TextBold = styled.a`
@@ -565,9 +566,10 @@ export const TogetherWrapper = styled.div`
   justify-content: center;
   align-items: center; /* 수직 가운데 정렬을 위해 추가 */
   width: 100%;
-  height: 599px;
+  height: 600px;
   background-color: rgba(232, 238, 234, 1);
   position: relative; /* 위치 설정 */
+  clip-path: inset(0px 0px 0px 0px);
 `;
 export const TogetherContainer = styled.div`
   display: flex;
@@ -622,8 +624,8 @@ export const DotPatternContainer = styled.div`
   width: 318px;
   height: 205px;
   position: absolute;
-  top: -5px;
-  left: 40px;
+  top: -67px;
+  left: 150px;
   z-index: 1;
 `;
 
@@ -633,6 +635,7 @@ export const Dot1 = styled.div`
   background-color: rgba(255, 255, 255, 1);
   border-radius: 50%; /* 도트를 원형으로 설정 */
 `;
+
 export const DotPatternContainer2 = styled.div`
   display: grid;
   grid-template-columns: repeat(7, 10px); /* 가로 7개, 각 도트의 너비는 10px */
@@ -642,8 +645,8 @@ export const DotPatternContainer2 = styled.div`
   width: 318px;
   height: 205px;
   position: absolute;
-  bottom: -5px;
-  right: 40px;
+  bottom: -8px;
+  right: -18px;
   z-index: 1;
 `;
 
