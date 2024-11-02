@@ -21,6 +21,8 @@ export const ContentsTextContainer = styled.div`
   font-family: "Pretendard-Regular";
   font-size: 24.16px;
   gap: 32.8px;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
 `;
 
 export const LineBold = styled.div`
@@ -34,8 +36,7 @@ export const LineLight = styled.div`
 `;
 
 export const MainContentsWrapper = styled.div`
-    flex-grow: 1; /* 남은 공간을 차지 */
-    overflow-y: auto; /* 세로 스크롤 활성화 */
+    fle: 1; /* 남은 공간을 차지 */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -90,14 +91,32 @@ export const TextLogo = styled.p`
   color: rgba(35, 68, 61, 1);
 `;
 
+export const TextContainer = styled.div`
+  display: flex;
+  align-items: center;
+    margin-top: 10rem;
+`;
+
 export const Title = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+    margin: 3rem;
 `;
 
 export const TextWrapper = styled.div``;
 
 export const StyledImage = styled.img`
+    width: 500px;
+`;
+
+export const StyledLogo = styled.img`
     width: 100px;
+    margin-bottom: 10rem;
+`;
+
+export const BackgroundContainer = styled.div`
+  background-color: #E8EEEA;
+    padding: 20px;
+    padding-bottom: 50px;
 `;
