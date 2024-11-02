@@ -54,8 +54,9 @@ export const Title = styled.div`
 export const TextWrapper = styled.div``;
 
 export const TextLight = styled.a`
-  font-family: "Pretendard-Light";
-  font-size: 34.51px;
+    font-family: "Pretendard-Light";
+    font-size: 25px;
+    color: #8B8B8B;
 `;
 
 export const TextBold = styled.a`

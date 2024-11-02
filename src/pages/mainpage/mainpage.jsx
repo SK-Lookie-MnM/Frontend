@@ -371,7 +371,7 @@ const MainPage = () => {
             </p>
           </TogetherText>
           <CoderBtn>함께 코더하기</CoderBtn>
-        </TogetherContainer>
+        </TogetherContainer>,
       </TogetherWrapper>
     </MainWrapper>
   );
