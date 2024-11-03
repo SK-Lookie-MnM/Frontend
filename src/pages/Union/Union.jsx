@@ -1,32 +1,37 @@
-//import { Autoplay, Pagination, Parallax } from "swiper/modules";
-//import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-
+// eslint-disable-next-line no-unused-vars
+import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
 import {
     BackgroundContainer,
-    ContentsTextBox1, ContentsTextBox2,
+    ContentsTextBox1,
+    ContentsTextBox2,
     ContentsTextContainer,
-    MainContentsWrapper,
-    MainWrapper, StyledImage, StyledLogo, TextBold, TextContainer, TextLogo,
+    MainWrapper,
+    StyledImage,
+    StyledLogo,
+    TextBold,
+    TextContainer,
+    TextLogo,
     TextWrapper,
-    Title
+    Title,
+    TogetherWrapper,
+    ImgDescription,
+    ImgDescription2,
+    ContentsImg,
+    DdwuDescription, TextContainer3, LogoImage
 } from "./Union.style";
 import {
     CoderBtn,
-    ContentsImg, Dot1, Dot2,
-    DotPatternContainer, DotPatternContainer2,
+    Dot1,
+    Dot2,
+    DotPatternContainer,
+    DotPatternContainer2,
     ImgBox,
     ImgContainer,
-    ImgDescription,
-    TogetherContainer, TogetherText, TogetherTitle,
-    TogetherWrapper
+    TogetherContainer,
+    TogetherText,
+    TogetherTitle
 } from "../mainpage/mainpage.style";
 import img1 from "../../assets/Union/union_1.png";
 import img2 from "../../assets/Union/union_2.png";
@@ -35,31 +40,33 @@ import img4 from "../../assets/icon/Signup/Group2609363.png";
 import img_c1 from "../../assets/Union/cam1.png";
 import img_c2 from "../../assets/Union/cam2.png";
 import img_c3 from "../../assets/Union/cam3.png";
+import logo from "../../assets/Union/logo.png";
 
 const Union = () => {
     useEffect(() => {
         AOS.init({
-            duration: 1000, // 애니메이션 지속 시간 (ms)
+            duration: 1000,
         });
     }, []);
 
     return (
         <MainWrapper>
-            <MainContentsWrapper>
+                {/* 타이틀 섹션 */}
                 <BackgroundContainer>
-                <Title>
-                    <TextWrapper>
-                        <ContentsTextContainer>
-                            <ContentsTextBox1>
-                                <TextBold>본사 계열사 연합구조</TextBold>
-                            </ContentsTextBox1>
-                        </ContentsTextContainer>
-                    </TextWrapper>
-                </Title>
+                    <Title>
+                        <TextWrapper>
+                            <ContentsTextContainer>
+                                <ContentsTextBox1>
+                                    <TextBold>본사 계열사 연합구조</TextBold>
+                                </ContentsTextBox1>
+                            </ContentsTextContainer>
+                        </TextWrapper>
+                    </Title>
 
+                {/* 이미지 섹션 */}
                 <ImgContainer>
                     <ImgBox>
-                        <ContentsImg src={img1}/>
+                        <ContentsImg src={img1} />
                         <ImgDescription>일상 속 제로웨이스트</ImgDescription>
                         <ContentsTextBox2>
                             <a>언제 어느 대학이든</a>
@@ -67,7 +74,7 @@ const Union = () => {
                         </ContentsTextBox2>
                     </ImgBox>
                     <ImgBox>
-                        <ContentsImg src={img2}/>
+                        <ContentsImg src={img2} />
                         <ImgDescription>대학 내 리필문화 확산</ImgDescription>
                         <ContentsTextBox2>
                             <a>본사의 전반적 운영 관리</a>
@@ -75,45 +82,55 @@ const Union = () => {
                         </ContentsTextBox2>
                     </ImgBox>
                     <ImgBox>
-                        <ContentsImg src={img3}/>
+                        <ContentsImg src={img3} />
                         <ImgDescription>MZ세대 환경문화 독려</ImgDescription>
                         <ContentsTextBox2>
                             <a>단순히 하나의 캠퍼스에서</a>
-                            <a>머무는 것이 캠코터 확산</a>
+                            <a>머무는 것이 캠코더 확산</a>
                         </ContentsTextBox2>
                     </ImgBox>
                 </ImgContainer>
+
                 </BackgroundContainer>
 
+                {/* 설명 섹션 */}
                 <ContentsTextContainer>
                     <TextContainer>
-                    <TextLogo>Cam;coder</TextLogo> 는 동덕여자대학교에 본사를 두고 있으며
+                        <TextLogo>Cam;coder</TextLogo> 는
+                        <DdwuDescription>
+                            <LogoImage src={logo} alt="로고" />
+                            동덕여자대학교
+                        </DdwuDescription>에
+                        <DdwuDescription>본사</DdwuDescription>를 두고 있으며
                     </TextContainer>
-                    <a>서울여대 | 세종대</a>
-                    <a>2곳의 학교와 함께 프로젝트를 진행 중입니다. </a><p/>
-                    <StyledLogo src={img4}/><p/>
-
+                    <TextContainer3>서울여대 | 세종대</TextContainer3>
+                    <TextContainer>2곳의 학교와 함께 프로젝트를 진행 중입니다.</TextContainer>
+                    <p />
+                    <StyledLogo src={img4} />
+                    <p />
                     <ContentsTextBox1>
-                        <TextBold>[우리의 가치에 동참하는 가족들]</TextBold>
+                        <TextBold>[우리의 가치에 동참하는 가족들]</TextBold><br/><br/><br/>
                     </ContentsTextBox1>
-                    <ImgDescription>본사</ImgDescription><p/>
-                    <StyledImage src={img_c1}/><p/>
-                    <ImgDescription>연합사</ImgDescription><p/>
+                    <ImgDescription2>본사</ImgDescription2>
+                    <StyledImage src={img_c1} />
+                    <p />
+                    <ImgDescription2>연합사</ImgDescription2>
                     <TextContainer>
-                        <StyledImage src={img_c2}/>
-                        <StyledImage src={img_c3}/>
+                        <StyledImage src={img_c2} />
+                        <StyledImage src={img_c3} />
                     </TextContainer>
                 </ContentsTextContainer>
 
+                {/* 함께하기 섹션 */}
                 <TogetherWrapper>
                     <DotPatternContainer>
                         {[...Array(35)].map((_, index) => (
-                            <Dot1 key={index}/>
+                            <Dot1 key={index} />
                         ))}
                     </DotPatternContainer>
                     <DotPatternContainer2>
                         {[...Array(35)].map((_, index) => (
-                            <Dot2 key={index}/>
+                            <Dot2 key={index} />
                         ))}
                     </DotPatternContainer2>
                     <TogetherContainer>
@@ -122,16 +139,14 @@ const Union = () => {
                         </TogetherTitle>
                         <TogetherText>
                             <p>캠코더를 원하는 어느 대학이든 MNM팀은 두팔 벌려 환영입니다.</p>
-                            <p>
-                                같이 <a>캠코더</a>해요!
-                            </p>
+                            <p>같이 <a>캠코더</a>해요!</p>
                         </TogetherText>
                         <CoderBtn>함께 코더하기</CoderBtn>
                     </TogetherContainer>
                 </TogetherWrapper>
-            </MainContentsWrapper>
         </MainWrapper>
     );
 };
 
 export default Union;
+

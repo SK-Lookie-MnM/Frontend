@@ -11,6 +11,8 @@ export const ContentsTextBox2 = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+    font-family: "Pretendard-Regular";
+    font-size: 25px;
 `;
 
 export const ContentsTextContainer = styled.div`
@@ -21,8 +23,8 @@ export const ContentsTextContainer = styled.div`
   font-family: "Pretendard-Regular";
   font-size: 24.16px;
   gap: 32.8px;
-    margin-top: 3rem;
-    margin-bottom: 5rem;
+    margin-top: 10rem;
+    margin-bottom: 8rem;
 `;
 
 export const LineBold = styled.div`
@@ -94,7 +96,14 @@ export const TextLogo = styled.p`
 export const TextContainer = styled.div`
   display: flex;
   align-items: center;
-    margin-top: 10rem;
+    font-family: "Pretendard-Semi-Bold";
+`;
+
+export const TextContainer3 = styled.div`
+  display: flex;
+  align-items: center;
+    font-family: "Pretendard-Semi-Bold";
+    color: #23443D;
 `;
 
 export const Title = styled.div`
@@ -102,6 +111,7 @@ export const Title = styled.div`
   flex-direction: column;
   align-items: center;
     margin: 3rem;
+    margin-top: 0rem;
 `;
 
 export const TextWrapper = styled.div``;
@@ -111,12 +121,56 @@ export const StyledImage = styled.img`
 `;
 
 export const StyledLogo = styled.img`
-    width: 100px;
+    width: 90px;
     margin-bottom: 10rem;
 `;
 
 export const BackgroundContainer = styled.div`
   background-color: #E8EEEA;
     padding: 20px;
-    padding-bottom: 50px;
+    padding-bottom: 7rem;
+    width: 100%;
+`;
+
+export const TogetherWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center; /* 수직 가운데 정렬을 위해 추가 */
+  width: 100%;
+  height: 599px;
+  background-color: rgba(232, 238, 234, 1);
+  position: relative; /* 위치 설정 */
+    margin-top: 7rem;
+`;
+
+export const ImgDescription = styled.a`
+  font-family: "Pretendard-Semi-Bold";
+  font-size: 25.81px;
+  color: rgba(35, 68, 61, 1);
+`;
+
+export const ImgDescription2 = styled.a`
+  font-family: "Pretendard-Semi-Bold";
+  font-size: 25.81px;
+  color: rgba(35, 68, 61, 1);
+    text-decoration: underline;
+    text-underline-offset: 11px; /* 밑줄과 글자 사이 간격 */
+    margin-bottom: 30px;
+`;
+
+export const ContentsImg = styled.img`
+    margin-bottom: 30px;
+`;
+
+export const DdwuDescription = styled.a`
+    font-family: "Pretendard-Semi-Bold";
+    font-size: 24px;
+    color: #8B2842;
+    margin-left: 10px;
+`;
+
+export const LogoImage = styled.img`
+    height: 30px;   /* 원하는 크기로 설정 */
+    margin-right: 4px;  /* 텍스트와 로고 사이 간격 */
+    vertical-align: middle; /* 텍스트와 수평으로 정렬 */
 `;

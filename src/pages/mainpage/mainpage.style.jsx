@@ -109,9 +109,10 @@ export const ImgBox = styled.div`
 `;
 
 export const ContentsImg = styled.img``;
+
 export const ImgDescription = styled.a`
   font-family: "Pretendard-Semi-Bold";
-  font-size: 23.66px;
+  font-size: 25.81px;
   color: rgba(35, 68, 61, 1);
 `;
 
@@ -571,6 +572,7 @@ export const TogetherWrapper = styled.div`
   position: relative; /* 위치 설정 */
   clip-path: inset(0px 0px 0px 0px);
 `;
+
 export const TogetherContainer = styled.div`
   display: flex;
   position: absolute; /* 위치 기준 설정 */
