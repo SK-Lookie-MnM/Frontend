@@ -4,18 +4,23 @@ import info_img1 from '../../../src/assets/Value/image_1.png'
 import info_img2 from '../../../src/assets/Value/image_2.png'
 import info_img3 from '../../../src/assets/Value/image_3.png'
 import info_img4 from '../../../src/assets/Value/image_4.png'
+import banner from '../../../src/assets/Value/banner.png'
 
 const Value = () => {
     const ButtonClick2 = () => {
         window.location.href = "https://forms.gle/v8dXGE9tii7oV22M7";
     }
-
     return (
-        <div>
+        <div className="value">
+            <div className="banner">
+                <img src={banner} className="banner_bg" alt="banner"/>
+                <p className="banner-text">LESS BUT BETTER <br/>
+                    환경을 위해 지속가능한 혁신적 대안을 찾아내다</p>
+            </div>
             <div className="info">
-                <hr className="hr_1" />
+                <hr className="hr_1"/>
                 <p className="title_1">Our Story</p>
-                <hr className="hr_2" />
+                <hr className="hr_2"/>
                 <div className="info-text">
                     <p>대학 시절, 누구나 공감하듯 학교 내의 자원들을 더 쉽고 편리하게 이용하며</p>
                     <p>Eco-Friendly한 라이프 스타일을 자연스럽게 실천하길 바랐습니다.</p>
@@ -41,8 +46,8 @@ const Value = () => {
                     <span style={{color: "#23443D"}}>캠퍼스 프로젝트 ver 1.0</span> 은 수익 기부 프로젝트로 함께 변화를 만들어가고 있습니다.
                 </p>
                 <div className="info_top">
-                    <img src={info_img1} className="info_img1"/>
-                    <img src={info_img2} className="info_img2"/>
+                    <img src={info_img1} className="info_img1" alt="img"/>
+                    <img src={info_img2} className="info_img2" alt="img"/>
                     <p className="info_top_">
                         <span className="info_top_title">수익 기부 프로젝트<br/></span>
                         진행한 리필 스테이션 수익은 모두 기부<br/>
@@ -60,8 +65,8 @@ const Value = () => {
                         본사와 계열사 연합 구조<br/>
                         캠코더 설치 및 문화 확산
                     </p>
-                    <img src={info_img3} className="info_img3"/>
-                    <img src={info_img4} className="info_img4"/>
+                    <img src={info_img3} className="info_img3" alt="img"/>
+                    <img src={info_img4} className="info_img4" alt="img"/>
                 </div>
             </div>
 

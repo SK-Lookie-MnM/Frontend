@@ -137,24 +137,75 @@
     margin-top: 10px; /* 다른 도형과의 간격 */
     position: absolute; /* 절대 위치 지정 */
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    z-index: 1;
 }
 
 .square1 {
+    display: flex;
     margin-top: 700px;
-    z-index: 1; /* z-index 설정 (hr2보다 위에) */
     margin-right: 600px;
 }
 
+.square1-left {
+    flex: 1;
+    font-size: 40px;
+    font-weight: bold;
+    color: #000000;
+    text-align: left;
+    margin-left: 50px;
+    line-height: 2;
+}
+
+.square1-right {
+    flex: 1;
+    font-size: 25px;
+    color: #333333;
+    text-align: right;
+    line-height: 1.5;
+    margin-right: 50px;
+}
+
 .square2 {
+    display: flex;
     margin-top: 1150px;
-    z-index: 1; /* z-index 설정 (hr2보다 위에) */
     margin-left: 600px;
+}
+.square2-left {
+    margin-left: 50px;
+    text-align: left;
+    flex: 2; /* 왼쪽 내용이 넓게 차지하도록 설정 */
+    font-size: 18px; /* 글씨 크기 */
+    color: #333333; /* 글씨 색상 */
+    line-height: 1.5;
+}
+.square2-left-info {
+    font-weight: bold;
+    font-size: 20px;
+}
+.square2-left-in {
+    margin-left: 30px;
+}
+
+.square2-right {
+    flex: 1; /* 오른쪽 영역이 작게 차지하도록 설정 */
+    font-size: 50px; /* 타이틀 크기 */
+    font-weight: bold; /* 글씨 두껍게 */
+    color: #000000; /* 강조된 글씨 색상 */
+    text-align: center; /* 오른쪽 정렬 */
 }
 
 .square3 {
     margin-top: 1600px;
     z-index: 1; /* z-index 설정 (hr2보다 위에) */
     margin-right: 600px;
+    text-align: center;
+}
+
+.square3_text {
+    font-weight: bold; /* 두꺼운 글씨 */
+    margin: 40px; /* 기본 마진 제거 */
+    font-size: 25px;
 }
 
 .getstarted {
