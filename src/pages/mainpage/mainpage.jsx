@@ -1,6 +1,6 @@
 import { Autoplay, Pagination, Parallax } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import mainheaderImg1 from "../../assets/mainpage/mainheader_3.jpg";
+import mainheaderImg1 from "../../assets/mainpage/배너사진1.png";
 import mainheaderImg2 from "../../assets/mainpage/mainheader_bg4.jpeg";
 import mainheaderImg3 from "../../assets/mainpage/mainheader_bg6.jpeg";
 // Import Swiper styles
@@ -371,7 +371,8 @@ const MainPage = () => {
             </p>
           </TogetherText>
           <CoderBtn>함께 코더하기</CoderBtn>
-        </TogetherContainer>,
+        </TogetherContainer>
+        ,
       </TogetherWrapper>
     </MainWrapper>
   );

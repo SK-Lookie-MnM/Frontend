@@ -17,6 +17,7 @@ export const MainHeaderSlide = styled.div`
 export const MainheaderImg = styled.img`
   width: 100%;
   height: 636px;
+  object-fit: cover;
 `;
 
 export const MainContentsWrapper = styled.div`
@@ -55,9 +56,9 @@ export const Title = styled.div`
 export const TextWrapper = styled.div``;
 
 export const TextLight = styled.a`
-    font-family: "Pretendard-Light";
-    font-size: 25px;
-    color: #8B8B8B;
+  font-family: "Pretendard-Light";
+  font-size: 25px;
+  color: #8b8b8b;
 `;
 
 export const TextBold = styled.a`
