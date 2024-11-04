@@ -45,7 +45,7 @@ export const HeaderTextContainer1 = styled.div`
   left: 50%;
   transform: translate(-50%, -50%); /* 중앙에 위치하게 설정 */
   flex-direction: column;
-  width: 1684px;
+  width: 100%;
   height: 313px;
 `;
 
@@ -87,7 +87,7 @@ export const HeaderTextContainer2 = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); /* 중앙에 위치하게 설정 */
-  width: 1407px;
+  width: 100%;
   height: 406.9px;
   align-items: center;
   justify-content: flex-start;
@@ -97,6 +97,7 @@ export const Img2contentsBox = styled.img`
   position: absolute;
   right: 0;
   margin-left: 278px; /* 왼쪽 여백 조정 */
+  margin-right: 100px;
   width: 425px;
   height: 406.59px;
 `;
@@ -109,6 +110,7 @@ export const Img2TextBox1 = styled.div`
   justify-content: center;
   width: 704px;
   line-height: 38.9px;
+  margin-left: 50px;
 
   left: 0;
   p:nth-child(1) {
@@ -197,7 +199,7 @@ export const HeaderContainer4 = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); /* 중앙에 위치하게 설정 */
-  width: 1629px;
+  width: 100%;
 `;
 
 export const HeaderTextContainer4 = styled.div`

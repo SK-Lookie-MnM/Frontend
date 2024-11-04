@@ -149,7 +149,7 @@ const MainPage = () => {
         <Swiper
           modules={[Parallax, Pagination, Autoplay]}
           autoplay={{
-            delay: 10000000,
+            delay: 3000,
             disableOnInteraction: false,
           }}
           speed={600}
