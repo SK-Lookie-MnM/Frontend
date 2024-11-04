@@ -14,10 +14,236 @@ export const MainHeaderSlide = styled.div`
   height: 636px;
 `;
 
+export const SlideWrapper = styled.div`
+  display: flex;
+  position: relative;
+`;
+
+export const SlideWrapper2 = styled.div`
+  display: flex;
+  position: relative;
+  background-color: rgba(35, 68, 61, 1);
+`;
+
+export const SlideWrapper3 = styled.div`
+  display: flex;
+  position: relative;
+  background-color: rgba(0, 0, 0, 1);
+  align-items: center;
+  justify-content: center;
+`;
 export const MainheaderImg = styled.img`
   width: 100%;
   height: 636px;
   object-fit: cover;
+`;
+
+export const HeaderTextContainer1 = styled.div`
+  display: flex;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 중앙에 위치하게 설정 */
+  flex-direction: column;
+  width: 1684px;
+  height: 313px;
+`;
+
+export const Img1TextBox1 = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 556px;
+  height: 200px;
+  top: 0;
+  left: 0;
+  margin-left: 50px;
+  line-height: 100px;
+  font-family: "Hakgyoansim-Dunggeunmiso-B";
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 60px;
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* 그림자 추가 */
+`;
+export const Img1TextBox2 = styled.div`
+  position: absolute;
+  display: flex;
+  width: 603px;
+  height: 37px;
+  font-family: "Pretendard-Light";
+  color: rgba(255, 255, 255, 1);
+  font-size: 30px;
+  line-height: 36.6px;
+  margin-right: 50px;
+  bottom: 0; /* 아래쪽 끝에 위치 */
+  right: 0; /* 왼쪽 끝에 위치 */
+`;
+
+export const HeaderTextContainer2 = styled.div`
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 중앙에 위치하게 설정 */
+  width: 1407px;
+  height: 406.9px;
+  align-items: center;
+  justify-content: flex-start;
+`;
+export const Img2contentsBox = styled.img`
+  display: flex;
+  position: absolute;
+  right: 0;
+  margin-left: 278px; /* 왼쪽 여백 조정 */
+  width: 425px;
+  height: 406.59px;
+`;
+
+export const Img2TextBox1 = styled.div`
+  display: flex;
+  position: absolute;
+  text-align: left;
+  flex-direction: column;
+  justify-content: center;
+  width: 704px;
+  line-height: 38.9px;
+
+  left: 0;
+  p:nth-child(1) {
+    font-family: "Pretendard-Regular";
+    font-size: 27.92px;
+    color: rgba(255, 255, 255, 1);
+  }
+  p:nth-child(1) a {
+    font-family: "Pretendard-Bold"; /* 원하는 폰트로 변경 */
+    font-size: 27.92px; /* 동일한 크기 유지 또는 다른 크기 설정 */
+    /* 다른 스타일 추가 가능 */
+  }
+
+  p:nth-child(2) {
+    font-family: "Hakgyoansim-Dunggeunmiso-B";
+    font-size: 72.29px;
+    color: rgba(255, 255, 255, 1);
+    padding-top: 68px;
+    padding-bottom: 49px;
+  }
+
+  p:nth-child(2) a {
+    font-family: "Hakgyoansim-Dunggeunmiso-R";
+    font-size: 55.61px;
+  }
+
+  p:nth-child(3),
+  p:nth-child(4) {
+    font-family: "Pretendard-Regular";
+    font-size: 23.89px;
+    color: rgba(255, 255, 255, 1);
+  }
+  p:nth-child(3) a,
+  p:nth-child(4) a {
+    font-family: "Pretendard-Semi-Bold";
+    color: rgba(180, 226, 205, 1);
+  }
+
+  p:nth-child(5) {
+    font-family: "Pretendard-Semi-Bold";
+    font-size: 23.89px;
+    color: rgba(255, 255, 255, 1);
+  }
+`;
+
+export const HeaderTextContainer3 = styled.div`
+  display: flex;
+  position: absolute;
+  top: 50%; /* 세로 중앙 정렬 */
+  transform: translateY(-50%); /* 중앙 정렬 보정 */
+  margin-left: 200px;
+`;
+
+export const Img3TextBox1 = styled.div`
+  font-family: "Pretendard-Semi-Bold";
+  font-size: 30px;
+  color: rgba(0, 0, 0, 1);
+  line-height: 55px;
+`;
+export const Img3TextBox2 = styled.div`
+  font-family: "Pretendard-Regular";
+  font-size: 30px;
+  color: rgba(0, 0, 0, 1);
+`;
+export const Img3TextBox3 = styled.div`
+  font-family: "Hakgyoansim-Dunggeunmiso-B";
+  color: rgba(35, 68, 61, 1);
+  font-size: 30px;
+  a: nth-child(1) {
+    font-family: "Hakgyoansim-Dunggeunmiso-R";
+    color: rgba(193, 167, 142, 1);
+  }
+`;
+export const Img3TextBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  width: 666px;
+  height: 233px;
+  gap: 25px;
+`;
+export const HeaderContainer4 = styled.div`
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 중앙에 위치하게 설정 */
+  width: 1629px;
+`;
+
+export const HeaderTextContainer4 = styled.div`
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 343px;
+  margin: 50px;
+  flex-direction: row;
+  gap: 643px; /* Img4Img와 Img4TextBox1 간의 간격 설정 */
+`;
+
+export const Img4Img = styled.img`
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 382.91px;
+  height: 322px;
+`;
+export const Img4TextBox1 = styled.div`
+  position: absolute; /* 오른쪽 아래에 고정 */
+  bottom: 0;
+  right: 0;
+  margin-left: 643px;
+  width: 600px;
+  height: 154px;
+  display: flex;
+  flex-direction: column;
+  color: rgba(255, 255, 255, 1);
+  line-height: 80px;
+  text-align: right;
+  p: nth-child(1) {
+    font-family: "Pretendard-Semi-Bold";
+    font-size: 40px;
+  }
+  p: nth-child(2) {
+    font-family: "Pretendard-Regular";
+    font-size: 45px;
+  }
+  p: nth-child(2) a {
+    font-family: "Hakgyoansim-Dunggeunmiso-B";
+    font-size: 45px;
+    color: rgba(186, 229, 209, 1);
+  }
 `;
 
 export const MainContentsWrapper = styled.div`
@@ -287,6 +513,8 @@ export const DividingLine = styled.div`
   font-size: 28px;
   color: rgba(255, 255, 255, 0.8);
 `;
+
+// AboutUs 부분
 export const AboutUsWrapper = styled.div`
   width: 100%;
   height: 1201px;
@@ -561,6 +789,7 @@ export const ImgSideTextBoxTitle3 = styled.div`
   font-size: 30px;
   color: rgba(35, 68, 61, 1);
 `;
+
 export const AboutUsImg = styled.img``;
 
 export const TogetherWrapper = styled.div`
