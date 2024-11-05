@@ -80,7 +80,7 @@ export const CoderBtn = styled.button`
     height: 49.25px;
   border-radius: 9.77px;
     margin-top: 30px;
-    margin-right: 20px;
+    margin-right: 15px;
 `;
 
 export const BMImg = styled.img`
