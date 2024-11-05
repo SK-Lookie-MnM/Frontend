@@ -40,7 +40,14 @@ import {
     MainBranch,
     BranchesContainer,
     Branch,
-    FooterText, LineContainer, CampaignImage2, ContainerBack, ContentsTextBox3
+    FooterText,
+    LineContainer,
+    CampaignImage2,
+    ContainerBack,
+    ContentsTextBox3,
+    CampaignImage3,
+    CampaignContainer2,
+    CampaignBold
 } from './BM.style';
 import bm1 from "../../assets/BM/bm1.png";
 import mnm from "../../assets/BM/mnm.png";
@@ -128,28 +135,33 @@ const BM = () => {
             </Container>
             </ContainerBack>
 
-            <CampaignContainer>
+            <CampaignContainer2>
                 <TextSection2>
                     <CampaignTitle>Our Campaign</CampaignTitle>
                     <CampaignText>
-                        2024 동덕여자대학교 대동제에서 우리는 특별한 환경 캠페인을 펼쳤습니다!
-                        동덕여대 환경지키기 x 리필스테이션 &#39;청산유수&#39; x SK LOOKIE MMN 3대 연합이 힘을 모아,
-                        캠퍼스에 새로운 바람을 불러일으켰습니다.
-                        <br /><br />
-                        축제 참가자들은 환경 인식을 높이기 위한 특별 부스를 운영했는데요. 특히 이번에는
-                        5세 이상의 어린이를 초대해 환경 인식을 높이기 위한 환경교육을 진행하는 뜻깊은 시간을 가졌습니다.
-                        <br /><br />
-                        아이들이 자연스럽게 환경의 중요성을 배우고, 작은 실천으로도 큰 변화를 만들 수
-                        있다는 메시지를 전달했습니다.
-                        <br /><br />
-                        이 경험이 어린이들에게 환경을 생각하는 첫걸음이 되길 바라며, 대학생들과
+                        2024 동덕여자대학교 대동제에서 우리는 특별한 환경 캠페인을 펼쳤습니다!<br/>
+                        <CampaignBold>
+                            동덕여대 환경지기 x 리필스테이션 &#39;일상공감&#39; x SK LOOKIE MNM<br/>
+                        </CampaignBold>
+                        3대 연합이 힘을 모아, 캠퍼스에 새로운 바람을 불러일으켰습니다.
+                        <br/><br/>
+                        축제 현장에서는 환경 인식을 높이기 위한 특별 부스를 운영했는데요<br/>
+                        <CampaignBold>
+                            특히 이번에는 만 5세 어린이집 아이들을 초대해 환경 인식을 높이기 위한<br/>
+                            환경교육을 진행하는 뜻깊은 시간을 가졌습니다.
+                        </CampaignBold>
+                        <br/><br/>
+                        아이들이 자연스럽게 환경의 중요성을 배우고, 작은 실천으로도 큰 변화를<br/>
+                        만들 수 있다는 메시지를 전달했습니다.
+                        <br/><br/>
+                        이 경험이 어린아이들에게 환경을 생각하는 첫걸음이 되길 바라며, 대학생들과<br/>
                         지역사회가 함께하는 더욱 의미 있는 캠페인으로 발전해 나가고자 합니다!
                     </CampaignText>
                 </TextSection2>
                 <ImageSection2>
-                    <CampaignImage src={campaignImage} alt="Our Campaign" />
+                    <CampaignImage3 src={campaignImage} alt="Our Campaign" />
                 </ImageSection2>
-            </CampaignContainer>
+            </CampaignContainer2>
 
             <InstagramContainer>
                 <InstagramTitle>Instagram</InstagramTitle><br/><br/><br/>
