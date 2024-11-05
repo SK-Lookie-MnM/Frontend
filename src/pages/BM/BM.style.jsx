@@ -43,7 +43,7 @@ export const BannerText = styled.div`
 
 export const TextLogo = styled.p`
   font-family: "Hakgyoansim-Dunggeunmiso-B";
-  font-size: 55.47px;
+  font-size: 45px;
   color: rgba(35, 68, 61, 1);
     margin-top: 30px;
 `;
@@ -76,15 +76,15 @@ export const CoderBtn = styled.button`
   font-size: 20px;
   color: rgba(255, 255, 255, 1);
   background-color: rgba(35, 68, 61, 1);
-  width: 200px;
-    height: 50px;
+  width: 180.57px;
+    height: 49.25px;
   border-radius: 9.77px;
     margin-top: 30px;
-    margin-right: 40px;
+    margin-right: 20px;
 `;
 
 export const BMImg = styled.img`
-    width: 500px;
+    height: 449.53px;
     margin-top: 4rem;
 `;
 
@@ -163,30 +163,32 @@ export const CampaignImage2 = styled.img`
 export const ContentsTextBox1 = styled.div`
     font-family: "Pretendard-Regular";
     color: black;
-    margin-bottom: 3rem;
-    font-size: 38.14px;
+    margin-bottom: 2.5rem;
+    font-size: 25.1px;
+    line-height: 29.96px;
 `;
 
 export const ContentsTextBox2 = styled.div`
     font-family: "Pretendard-Regular";
     color: black;
     margin-bottom: 30px;
-    font-size: 30px;
-    line-height: 1.5;
+    font-size: 20.08px;
+    line-height: 28.7px;
 `;
 
 export const ContentsTextBox3 = styled.div`
     font-family: "Pretendard-Bold";
     color: #23443D;
     margin-bottom: 30px;
-    font-size: 30px;
+    font-size: 20.08px;
+    line-height: 28.7px;
 `;
 
 
 export const ContentsTextBold = styled.a`
   font-family: "Hakgyoansim-Dunggeunmiso";
   color: rgba(175, 149, 122, 1);
-    font-size: 40px;
+    font-size: 30px;
     margin-left: 10px;
     margin-top: 40px; // 위 요소와의 간격을 설정
     display: block; // 한 줄 차지
