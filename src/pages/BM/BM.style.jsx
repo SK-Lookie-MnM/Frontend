@@ -104,6 +104,18 @@ export const CampaignContainer = styled.div`
     margin-bottom: 10rem;
 `;
 
+export const CampaignContainer2 = styled.div`
+  display: flex;
+  align-items: flex-start;
+    width: 90%; // 전체 화면의 80%만 사용
+    margin: 0 auto; // 화면 가운데 정렬
+  padding: 20px;
+  background-color: #ffffff;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+`;
+
+
 export const TextSection = styled.div`
   flex: 2;
   margin-right: 20px;
@@ -121,12 +133,20 @@ export const CampaignTitle = styled.h2`
   font-weight: bold;
   color: #23443D;
   margin-bottom: 25px;
+    line-height: 45.7px;
 `;
 
 export const CampaignText = styled.p`
     font-family: "Pretendard-Regular";
   font-size: 25px;
-  line-height: 1.6;
+  line-height: 38px;
+  color: black;
+`;
+
+export const CampaignBold = styled.p`
+    font-family: "Pretendard-Bold";
+  font-size: 25px;
+  line-height: 38px;
   color: black;
 `;
 
@@ -159,6 +179,13 @@ export const CampaignImage2 = styled.img`
   max-width: 1000px;
   border-radius: 8px;
 `;
+
+export const CampaignImage3 = styled.img`
+  width: 744px;
+  height: 515px;
+    margin-top: 60px;
+`;
+
 
 export const ContentsTextBox1 = styled.div`
     font-family: "Pretendard-Regular";
