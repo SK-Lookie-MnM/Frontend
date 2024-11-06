@@ -8,6 +8,7 @@ import Article from "./pages/Articles/Articles"
 import Union from "./pages/Union/Union";
 import BM from "./pages/BM/BM";
 import FAQ from "./pages/FAQ/FAQ";
+import UnivMap from "./pages/UnivMap/UnivMap";
 function App() {
   return (
     <div className="content">
@@ -21,6 +22,7 @@ function App() {
         <Route path="/Articles" element={<Article />} />
         <Route path="/bm" element={<BM />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/univMap" element={<UnivMap />} />
       </Routes>
     </div>
   );
