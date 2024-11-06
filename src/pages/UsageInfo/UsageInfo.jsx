@@ -55,47 +55,64 @@ const UsageInfo = () => {
                 <hr className="hr2"/>
 
                 <div className="square1">
-                    <div className="square1-left">
-                        <p>1회 이용권 : 2,000원</p>
-                        <p>2회 이용권 : 3,500원</p>
-                        <p>3회 이용권 : 5,000원</p>
-                    </div>
-                    <div className="square1-right">
-                        <p>START : 2024.10.09. 12:00</p>
-                        <p>END : 2024.10.30. 18:00</p>
-                        <p>무인 24시간 운영 (주말 이용 가능)</p>
-                    </div>
+                    <p className="square3_title">사용 방법<br/></p>
+                    <p className="square3_text">1. QR 폼 결제 완료 후 안내되는 비밀번호 4자리를 확인합니다.</p>
+                    <p className="square3_text">2. 비밀번호 4자리를 이용해 캐비넷에서 주화를 수령합니다..</p>
+                    <p className="square3_text">3. 원하는 캡슐을 주화를 사용해 재미있게 뽑습니다.</p>
                 </div>
 
                 <div className="square2">
-                    <div className="square2-left">
-                        <p className="square2-left-info">• 1코인으로 1개의 캡슐 사용 가능</p>
-                        <p className="square2-left-info">• 2가지 옵션의 캡슐로 구성</p>
-                        <div className="square2-left-in">
-                            <p style={{ fontWeight: "bold" }}>① 캡슐 A: 고체 세제 캡슐(4정)<br/>
-                                <span style={{color: "green"}}>모든 캠퍼스에 배치</span>
-                            </p>
-                            <p style={{ fontWeight: "bold" }}>② 캡슐 B: 고체 워시바 캡슐(1개)<br/>
-                                <span style={{color: "green"}}>(바디워시바 / 샴푸바 / 핸드솝 / 린스바)</span>
-                            </p>
+                    <div className="square1-left">
+                        <p>1 캡슐 = <span style={{color: '#23443D'}}>2,000₩</span></p>
+                        <p className="price">4,000₩</p>
+                        <p>2 캡슐 = <span style={{color: '#23443D'}}>3,500₩</span></p>
+                        <p className="price">6,000₩</p>
+                        <p>3 캡슐 = <span style={{color: '#23443D'}}>5,000₩</span></p>
+                    </div>
+                    <div className="info-section">
+                        <div className="info-item">
+                            <span className="dot"></span>
+                            <div className="info-text">
+                                <p><strong>START :</strong> 2024.10.09. 12:00</p>
+                                <p><strong>END :</strong> 2024.10.30. 18:00</p>
+                            </div>
                         </div>
-                        <p style={{ fontWeight: "bold" }}>✓ 캠코더 프로젝트 1.0은 학교별로 물품 구성을 다르게 운영합니다.</p>
-                        <p className="square2-left-in">
-                            - 동덕여대: 샴푸바<br/>
-                            - 세종대: 핸드솝<br/>
-                            - 서울여대: 페이스 & 바디바
-                        </p>
+                        <div className="info-item">
+                            <span className="dot"></span>
+                            <p><strong>무인 24시간 운영</strong> (주말이용가능)</p>
+                        </div>
+                        <div className="info-item">
+                            <span className="dot"></span>
+                            <p>현재 동덕여대/서울여대/세종대 운영중</p>
+                        </div>
+                        <div className="info-item">
+                            <span className="dot"></span>
+                            <p>위 아래 캡슐 <strong>모두 동일 가격!</strong></p>
+                        </div>
                     </div>
-                    <div className="square2-right">
-                        <p>코인 1개<br/> = <br/>캡슐 1개</p>
-                    </div>
+
                 </div>
 
                 <div className="square3">
-                    <p className="square3_text">사용 방법<br/></p>
-                    <p className="square3_text">(1) QR 폼 결제 완료 후 안내되는 4자리 비밀번호를 확인해주세요.</p>
-                    <p className="square3_text">(2) 캐비닛에 비밀번호를 위에서부터 입력하시고 주화를 수령해주세요.</p>
-                    <p className="square3_text">(3) 원하시는 물품을 수령하시면 과정이 완료됩니다.</p>
+                    <div className="square2-left">
+                        <p className="square2-left-info">• 1coin 당 1개의 캡슐 사용 가능</p>
+                        <p className="square2-left-info">• 2가지 옵션의 캡슐로 구성</p>
+                        <div className="square2-left-in">
+                            <p style={{fontWeight: "bold"}}>캡슐 A) 고체 세제 캡슐 4정(약 1달 분)<br/>
+                                <span style={{color: "#666666"}}>모든 캠퍼스에 배치</span>
+                            </p>
+                            <p style={{fontWeight: "bold"}}>캡슐 B) 고체 워시바 캡슐 1개<br/>
+                                <span style={{color: "#666666"}}>(바디워시바 / 샴푸바 / 핸드솝 / 린스바)</span>
+                            </p>
+                        </div>
+                        <p style={{color: "#666666", marginTop:"10px"}}>✓ 캠코더 프로젝트 ver 1.0 학교별 구성</p>
+                        <p className="square2-left-in"> (동덕여대 - 샴푸바/서울여대 - 페이스&바디/세종대 - 핸드솝) </p>
+                    </div>
+                    <div className="square2-right">
+                        <p style={{fontWeight:"bold", fontSize:"50px", marginRight:"50px"}}>1 coin
+                            <span style={{color: "#666666", fontSize:"30px", fontWeight:"normal"}}> = 1 캡슐 이용</span>
+                        </p>
+                    </div>
                 </div>
             </div>
 
@@ -104,7 +121,7 @@ const UsageInfo = () => {
                 <img src={dot1} className="dot1" alt="Dot 1"/>
                 <div className="usage-info-container">
                     <button className="button2" onClick={ButtonClick2}>
-                    결제하기
+                        결제하기
                     </button>
                 </div>
                 <p className="title3">Get Started!</p>
