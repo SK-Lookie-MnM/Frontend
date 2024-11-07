@@ -1,11 +1,28 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
-import "./Navbar.css";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/mainpage/camcoder_logo2.png";
+import instaLogo from "../../components/assets/navbar/NavbarInstaLogo.png";
+import logoLight from "../../components/assets/navbar/NavbarlogoWhite.png"; // visible이 true일 때 사용할 이미지
+import logoDark from "../../components/assets/navbar/NavbarlogoDark.png"; // visible이 false일 때 사용할 이미지
+
+import {
+  NavContainer,
+  NavItem,
+  LogoItem,
+  NavWrapper,
+  UsersBox,
+  InstaLogo,
+  Logo,
+  DropdownWrapper,
+  SubmenuColumn,
+  NavBox,
+  DropdownMenuWrapper,
+  SubmenuWrapper,
+  SubmenuRow,
+} from "./Navbar.style"; // styled-components로 정의된 스타일 임포트
 
 const Navbar = () => {
-  const navigate = useNavigate(); // useNavigate 초기화
+  const navigate = useNavigate();
 
   const menuLst = ["소개", "가이드", "연합", "NEWS", "캠코더 맵", "문의"];
   const submenuLst = [
@@ -16,6 +33,7 @@ const Navbar = () => {
     ["학교별 맵"],
     ["FAQ"],
   ];
+  const [showDropdown, setShowDropdown] = useState(false); // 드롭다운 표시 상태
 
   // 각 서브메뉴와 연결된 경로
   const submenuLinks = [
@@ -26,21 +44,14 @@ const Navbar = () => {
     ["/univMap"],
     ["/faq"],
   ];
-  const [hide, setHide] = useState({
-    0: false,
-    1: false,
-    2: false,
-    3: false,
-    4: false,
-    5: false,
-  });
 
-  const mouseEvent = (index, bool) => {
-    const change = { ...hide };
-    change[index] = bool;
-    setHide(change);
+  const handleMouseEnter = () => {
+    setShowDropdown(true);
   };
 
+  const handleMouseLeave = () => {
+    setShowDropdown(true);
+  };
   const handleMenuClick = (link) => {
     navigate(link); // 클릭 시 해당 링크로 이동
   };
@@ -50,39 +61,60 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="nav">
-      <li className="logoItem">
-        <img src={logo} alt="Logo" className="logo" onClick={handleLogoClick} />
-      </li>
-      <ul className="navContainer">
-        {menuLst.map((menu, index) => (
-          <li
-            key={index}
-            className="navItem"
-            onMouseEnter={() => mouseEvent(index, true)}
-            onMouseLeave={() => mouseEvent(index, false)}
-          >
-            <p onClick={() => handleMenuClick(submenuLinks[index][0])}>
-              {menu}
-            </p>
-            {hide[index] && (
-              <ul className="dropdown">
-                {submenuLst[index].map((submenu, subIndex) => (
-                  <li
-                    key={subIndex}
-                    onClick={() =>
-                      handleMenuClick(submenuLinks[index][subIndex])
-                    }
-                  >
-                    {submenu}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <NavWrapper visible={showDropdown} onMouseLeave={() => handleMouseLeave()}>
+      <NavContainer>
+        <LogoItem>
+          <Logo
+            src={showDropdown ? logoLight : logoDark}
+            alt="Logo"
+            onClick={() => handleLogoClick()}
+          />
+        </LogoItem>
+        <NavBox>
+          {menuLst.map((menu, index) => (
+            <NavItem
+              visible={showDropdown}
+              onMouseEnter={() => handleMouseEnter()}
+              key={index}
+            >
+              <p onClick={() => handleMenuClick(submenuLinks[index][0])}>
+                {menu}
+              </p>
+            </NavItem>
+          ))}
+        </NavBox>
+        <UsersBox visible={showDropdown}>
+          <p>로그인</p>
+          <a>|</a>
+          <p>회원가입</p>
+          <a>|</a>
+          <InstaLogo src={instaLogo} />
+        </UsersBox>
+      </NavContainer>
+
+      {showDropdown && (
+        <DropdownWrapper>
+          <DropdownMenuWrapper>
+            <SubmenuWrapper>
+              {submenuLst.map((submenus, index) => (
+                <SubmenuRow key={index}>
+                  {submenus.map((submenu, subIndex) => (
+                    <SubmenuColumn
+                      key={`${index}-${subIndex}`}
+                      onClick={() =>
+                        handleMenuClick(submenuLinks[index][subIndex])
+                      }
+                    >
+                      {submenu}
+                    </SubmenuColumn>
+                  ))}
+                </SubmenuRow>
+              ))}
+            </SubmenuWrapper>
+          </DropdownMenuWrapper>
+        </DropdownWrapper>
+      )}
+    </NavWrapper>
   );
 };
 
