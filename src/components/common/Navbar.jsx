@@ -16,15 +16,14 @@ import {
   DropdownWrapper,
   SubmenuColumn,
   NavBox,
-  DropdownMenuWrapper,
   SubmenuWrapper,
-  SubmenuRow,
 } from "./Navbar.style"; // styled-components로 정의된 스타일 임포트
 
 const Navbar = () => {
   const navigate = useNavigate();
 
   const menuLst = ["소개", "가이드", "연합", "NEWS", "캠코더 맵", "문의"];
+
   const submenuLst = [
     ["가치관", "BM • Campaign"],
     ["사용방법"],
@@ -50,7 +49,7 @@ const Navbar = () => {
   };
 
   const handleMouseLeave = () => {
-    setShowDropdown(true);
+    setShowDropdown(false);
   };
   const handleMenuClick = (link) => {
     navigate(link); // 클릭 시 해당 링크로 이동
@@ -73,13 +72,31 @@ const Navbar = () => {
         <NavBox>
           {menuLst.map((menu, index) => (
             <NavItem
-              visible={showDropdown}
-              onMouseEnter={() => handleMouseEnter()}
               key={index}
+              visible={showDropdown}
+              onMouseEnter={() => handleMouseEnter(index, true)}
+              onMouseLeave={() => handleMouseLeave(index, false)}
             >
               <p onClick={() => handleMenuClick(submenuLinks[index][0])}>
                 {menu}
               </p>
+              {showDropdown && (
+                <DropdownWrapper>
+                  <SubmenuWrapper>
+                    {submenuLst[index].map((submenu, subIndex) => (
+                      <SubmenuColumn
+                        cursor={showDropdown}
+                        key={`${index}-${subIndex}`}
+                        onClick={() =>
+                          handleMenuClick(submenuLinks[index][subIndex])
+                        }
+                      >
+                        {submenu}
+                      </SubmenuColumn>
+                    ))}
+                  </SubmenuWrapper>
+                </DropdownWrapper>
+              )}
             </NavItem>
           ))}
         </NavBox>
@@ -91,29 +108,6 @@ const Navbar = () => {
           <InstaLogo src={instaLogo} />
         </UsersBox>
       </NavContainer>
-
-      {showDropdown && (
-        <DropdownWrapper>
-          <DropdownMenuWrapper>
-            <SubmenuWrapper>
-              {submenuLst.map((submenus, index) => (
-                <SubmenuRow key={index}>
-                  {submenus.map((submenu, subIndex) => (
-                    <SubmenuColumn
-                      key={`${index}-${subIndex}`}
-                      onClick={() =>
-                        handleMenuClick(submenuLinks[index][subIndex])
-                      }
-                    >
-                      {submenu}
-                    </SubmenuColumn>
-                  ))}
-                </SubmenuRow>
-              ))}
-            </SubmenuWrapper>
-          </DropdownMenuWrapper>
-        </DropdownWrapper>
-      )}
     </NavWrapper>
   );
 };
