@@ -1,5 +1,11 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../../fonts/Pretendard-Regular.ttf') format('truetype');
+}
+
 .articles {
     width: 100%;
+    font-family: 'Pretendard';
 }
 .banner {
     position: relative;
@@ -29,8 +35,8 @@
 }
 
 .article-image {
-    width: 40%;
-    height: auto;
+    width: 670px;
+    height: 552px;
     border-radius: 8px;
     margin-right: 20px;
 }
