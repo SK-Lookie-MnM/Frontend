@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../../fonts/Pretendard-Regular.ttf') format('truetype');
+}
+
+.value {
+    font-family: "Pretendard";
+}
+
 .banner {
     position: relative;
     width: 100%;
