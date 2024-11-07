@@ -1,8 +1,11 @@
 import { Autoplay, Pagination, Parallax } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import mainheaderImg1 from "../../assets/mainpage/mainheader_3.jpg";
-import mainheaderImg2 from "../../assets/mainpage/mainheader_bg4.jpeg";
-import mainheaderImg3 from "../../assets/mainpage/mainheader_bg6.jpeg";
+import mainheaderImg1 from "../../assets/mainpage/image1.png";
+import mainheaderImg2 from "../../assets/mainpage/image2.png";
+import mainheaderImg3 from "../../assets/mainpage/image3.png";
+import mainheaderImg4 from "../../assets/mainpage/image4.png";
+import mainImgContent from "../../assets/mainpage/mainImgContents.png";
+import mainImgBigLogo from "../../assets/mainpage/mainBigLog0.png";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -114,6 +117,24 @@ import instaLogo from "../../assets/mainpage/aboutus/about_us_ins.svg";
 import MiniLogoM1 from "../../assets/mainpage/aboutus/about_us_M.svg";
 import MiniLogoM2 from "../../assets/mainpage/aboutus/about_us_M2.svg";
 import MiniLogoN from "../../assets/mainpage/aboutus/about_us_N.svg";
+import { SlideWrapper } from "./mainpage.style.jsx";
+import { HeaderTextContainer1 } from "./mainpage.style.jsx";
+import { Img1TextBox1 } from "./mainpage.style.jsx";
+import { Img1TextBox2 } from "./mainpage.style.jsx";
+import { Img2TextBox1 } from "./mainpage.style.jsx";
+import { SlideWrapper2 } from "./mainpage.style.jsx";
+import { HeaderTextContainer2 } from "./mainpage.style.jsx";
+import { Img2contentsBox } from "./mainpage.style.jsx";
+import { Img3TextBox1 } from "./mainpage.style.jsx";
+import { Img3TextBox } from "./mainpage.style.jsx";
+import { Img3TextBox2 } from "./mainpage.style.jsx";
+import { Img3TextBox3 } from "./mainpage.style.jsx";
+import { HeaderTextContainer3 } from "./mainpage.style.jsx";
+import { SlideWrapper3 } from "./mainpage.style.jsx";
+import { HeaderTextContainer4 } from "./mainpage.style.jsx";
+import { Img4TextBox1 } from "./mainpage.style.jsx";
+import { Img4Img } from "./mainpage.style.jsx";
+import { HeaderContainer4 } from "./mainpage.style.jsx";
 
 const MainPage = () => {
   useEffect(() => {
@@ -140,13 +161,80 @@ const MainPage = () => {
           watchOverflow={true}
         >
           <SwiperSlide>
-            <MainheaderImg src={mainheaderImg1} alt="img" />
+            <SlideWrapper>
+              <MainheaderImg src={mainheaderImg1} alt="img" />
+              <HeaderTextContainer1>
+                <Img1TextBox1>
+                  <p>LESS BUT BETTER</p> WE GO TOGETHER
+                </Img1TextBox1>
+                <Img1TextBox2>
+                  본질적인 가치에 집중하며 함께 더 나아지는 : 캠코더
+                </Img1TextBox2>
+              </HeaderTextContainer1>
+            </SlideWrapper>
           </SwiperSlide>
           <SwiperSlide>
-            <MainheaderImg src={mainheaderImg2} alt="img" />
+            <SlideWrapper2>
+              <MainheaderImg src={mainheaderImg2} alt="img" />
+              <HeaderTextContainer2>
+                <Img2TextBox1>
+                  <p>
+                    국내 최초 <a>IN-CAMPUS 리필스테이션</a>
+                  </p>
+                  <p>
+                    Cam;Coder <a>project</a>
+                  </p>
+
+                  <p>
+                    환경보호에 대한 <a>진입장벽을 낮추고</a>
+                  </p>
+                  <p>
+                    Plastic Free 문화를 <a>MZ세대로 확산하기위한</a>
+                  </p>
+                  <p>캠퍼스 기반 리필스테이션 !</p>
+                </Img2TextBox1>
+                <Img2contentsBox src={mainImgContent}></Img2contentsBox>
+              </HeaderTextContainer2>
+            </SlideWrapper2>
           </SwiperSlide>
           <SwiperSlide>
-            <MainheaderImg src={mainheaderImg3} alt="img" />
+            <SlideWrapper>
+              <MainheaderImg src={mainheaderImg3} alt="img" />
+              <HeaderTextContainer3>
+                <Img3TextBox>
+                  <Img3TextBox1>
+                    <p>일상 속, 지구를 위한 작은 실천 ! </p>
+                    <p>친환경 고제 생활용품 소분 플랫폼</p>
+                  </Img3TextBox1>
+                  <Img3TextBox2>
+                    <p>
+                      이론이 아닌 현실에 발 붙이고 서서 할 수 있는 작은 실천
+                    </p>
+                  </Img3TextBox2>
+                  <Img3TextBox3>
+                    <p>
+                      Cam;Coder <a>project</a>
+                    </p>
+                  </Img3TextBox3>
+                </Img3TextBox>
+              </HeaderTextContainer3>
+            </SlideWrapper>
+          </SwiperSlide>
+          <SwiperSlide>
+            <SlideWrapper3>
+              <MainheaderImg src={mainheaderImg4} alt="img" />
+              <HeaderContainer4>
+                <HeaderTextContainer4>
+                  <Img4Img src={mainImgBigLogo} />
+                  <Img4TextBox1>
+                    <p>그 누구도 상상 못했던 혁신</p>
+                    <p>
+                      이제 <a>Cam;Coder</a>가 시작합니다.
+                    </p>
+                  </Img4TextBox1>
+                </HeaderTextContainer4>
+              </HeaderContainer4>
+            </SlideWrapper3>
           </SwiperSlide>
         </Swiper>
       </MainHeaderSlide>
@@ -371,7 +459,8 @@ const MainPage = () => {
             </p>
           </TogetherText>
           <CoderBtn>함께 코더하기</CoderBtn>
-        </TogetherContainer>,
+        </TogetherContainer>
+        ,
       </TogetherWrapper>
     </MainWrapper>
   );
