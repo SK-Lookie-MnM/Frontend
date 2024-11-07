@@ -8,7 +8,7 @@ import Article from "./pages/Articles/Articles"
 import Union from "./pages/Union/Union";
 import BM from "./pages/BM/BM";
 import FAQ from "./pages/FAQ/FAQ";
-import UnivMap from "./pages/UnivMap/UnivMap";
+import UnivMap from "./pages/UnivMap/UnivMap_Main";
 function App() {
   return (
     <div className="content">
