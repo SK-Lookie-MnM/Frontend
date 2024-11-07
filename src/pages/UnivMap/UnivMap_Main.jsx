@@ -1,4 +1,5 @@
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { useNavigate } from 'react-router-dom'; // useNavigate 추가
 import {
     Container,
     Title,
@@ -16,6 +17,7 @@ import {
 } from './UnivMap_Main.style';
 
 const UnivMap_Main = () => {
+    const navigate = useNavigate(); // useNavigate 훅 사용
     const universityData = [
         {
             name: '동덕여자대학교',
@@ -35,7 +37,7 @@ const UnivMap_Main = () => {
         },
         {
             name: '세종대학교',
-            address: '사울시 광진구 능동로209  행복기숙사(새날관) 세탁실 앞',
+            address: '사울시 광진구 능동로209  | @sejoon_theeyes',
             operatingHours: '10:00 - 21:00',
             contact: 'camcoder2024.official@gmail.com',
             googleMapLink: 'https://www.google.com/maps/place/%EC%84%B8%EC%A2%85%EB%8C%80%ED%95%99%EA%B5%90+%ED%96%89%EB%B3%B5%EA%B8%B0%EC%88%99%EC%82%AC(%EC%83%88%EB%82%A0%EA%B4%80)/@37.553262,127.0726568,15z/data=!4m2!3m1!1s0x0:0x822da47e82cbbfc?sa=X&ved=1t:2428&ictx=111',
@@ -67,10 +69,10 @@ const UnivMap_Main = () => {
                     <InfoContainer>
                         <UniversityName>{university.name}</UniversityName>
                         <TextContainer>
-                        <InfoText>{university.address}</InfoText>
-                        <Button_Map onClick={() => window.open(university.googleMapLink, "_blank")}>
-                            지도 보기
-                        </Button_Map>
+                            <InfoText>{university.address}</InfoText>
+                            <Button_Map onClick={() => navigate(`/univMap_info?name=${encodeURIComponent(university.name)}`)}>
+                                지도 보기
+                            </Button_Map>
                         </TextContainer>
                     </InfoContainer>
                 </UnivItem>

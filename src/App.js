@@ -9,6 +9,7 @@ import Union from "./pages/Union/Union";
 import BM from "./pages/BM/BM";
 import FAQ from "./pages/FAQ/FAQ";
 import UnivMap from "./pages/UnivMap/UnivMap_Main";
+import UnivMap_info from "./pages/UnivMap/UnivMap"
 function App() {
   return (
     <div className="content">
@@ -23,6 +24,7 @@ function App() {
         <Route path="/bm" element={<BM />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/univMap" element={<UnivMap />} />
+        <Route path="/univMap_info" element={<UnivMap_info/>} />
       </Routes>
     </div>
   );

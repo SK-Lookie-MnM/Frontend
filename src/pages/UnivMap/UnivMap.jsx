@@ -1,4 +1,5 @@
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { useLocation } from 'react-router-dom';  // URL 파라미터를 가져오기 위한 훅
 import {
     Container,
     Title,
@@ -12,6 +13,11 @@ import {
 } from './UnivMap.style';
 
 const UnivMap = () => {
+    // URL에서 파라미터 가져오기
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const universityName = queryParams.get('name');  // 'name' 파라미터 값
+
     const universityData = [
         {
             name: '동덕여자대학교',
@@ -39,6 +45,13 @@ const UnivMap = () => {
         },
     ];
 
+    // 대학 이름에 해당하는 데이터만 필터링
+    const selectedUniversity = universityData.find((university) => university.name === universityName);
+
+    if (!selectedUniversity) {
+        return <div>해당 대학 정보를 찾을 수 없습니다.</div>;
+    }
+
     const containerStyle = {
         width: '100%',
         height: '100%',
@@ -46,33 +59,31 @@ const UnivMap = () => {
 
     return (
         <Container>
-            <Title>학교별 캠코더 맵</Title>
-            {universityData.map((university, index) => (
-                <UnivItem key={index}>
-                    <MapContainer>
-                        <LoadScript googleMapsApiKey="AIzaSyBIhXszHMMF6gk1w8iwJ6Vz2Rrm1iIfQLQ">
-                            <GoogleMap
-                                mapContainerStyle={containerStyle}
-                                center={university.position}
-                                zoom={15}
-                            >
-                                <Marker position={university.position} />
-                            </GoogleMap>
-                        </LoadScript>
-                    </MapContainer>
-                    <InfoContainer>
-                        <TextContainer>
-                            <UniversityName>{university.name}</UniversityName>
-                            <LinkText href={university.googleMapLink} target="_blank" rel="noopener noreferrer">
-                                구글맵 링크
-                            </LinkText>
-                        </TextContainer>
-                        <InfoText>운영공간 | {university.address}</InfoText>
-                        <InfoText>운영시간 | {university.operatingHours}</InfoText>
-                        <InfoText>문의 | {university.contact}</InfoText>
-                    </InfoContainer>
-                </UnivItem>
-            ))}
+            <Title>{selectedUniversity.name} 캠코더 맵</Title>
+            <UnivItem>
+                <MapContainer>
+                    <LoadScript googleMapsApiKey="AIzaSyBIhXszHMMF6gk1w8iwJ6Vz2Rrm1iIfQLQ">
+                        <GoogleMap
+                            mapContainerStyle={containerStyle}
+                            center={selectedUniversity.position}
+                            zoom={15}
+                        >
+                            <Marker position={selectedUniversity.position} />
+                        </GoogleMap>
+                    </LoadScript>
+                </MapContainer>
+                <InfoContainer>
+                    <TextContainer>
+                        <UniversityName>{selectedUniversity.name}</UniversityName>
+                        <LinkText href={selectedUniversity.googleMapLink} target="_blank" rel="noopener noreferrer">
+                            구글맵 링크
+                        </LinkText>
+                    </TextContainer>
+                    <InfoText>운영공간 | {selectedUniversity.address}</InfoText>
+                    <InfoText>운영시간 | {selectedUniversity.operatingHours}</InfoText>
+                    <InfoText>문의 | {selectedUniversity.contact}</InfoText>
+                </InfoContainer>
+            </UnivItem>
         </Container>
     );
 };
