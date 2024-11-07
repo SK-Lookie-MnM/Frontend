@@ -7,6 +7,8 @@ export const Container = styled.div`
     font-family: "Pretendard-Regular";
     justify-content: center;
     align-items: center;
+    display: flex;
+    flex-direction: column;
 `;
 
 export const Title = styled.h1`
@@ -53,16 +55,16 @@ export const UniversityName = styled.h3`
 
 export const LinkText = styled.a`
   color: #23443D;
-  text-decoration: none;
     font-size: 17.22px;
     margin-left: 7rem;
+    text-decoration: underline;
   &:hover {
     text-decoration: underline;
   }
 `;
 
 export const InfoText = styled.p`
-  margin: 5px 0;
+    margin-left: 20px;
   font-size: 0.9em;
 `;
 
@@ -70,5 +72,8 @@ export const InfoText = styled.p`
 export const TextContainer = styled.div`
     display: flex;
     align-items: center; /* 세로 중앙 정렬 */
+    font-size: 21px;
+    margin-left: 20px;
+    margin-top: 100px;
     margin-bottom: 20px; /* 아래쪽 여백 */
 `;

@@ -6,16 +6,20 @@ import {
     InfoContainer,
     UnivItem,
     UniversityName,
-    LinkText,
+    Button_Map,
     InfoText,
     TextContainer,
-} from './UnivMap.style';
+    Dot,
+    CoderText,
+    Button_Coder,
+    CoderContainer,
+} from './UnivMap_Main.style';
 
-const UnivMap = () => {
+const UnivMap_Main = () => {
     const universityData = [
         {
             name: '동덕여자대학교',
-            address: '백주년기념관 B1 꽃이피움 CAFE 앞',
+            address: '서울시 성북구 화랑로13길 60 백주년기념관 B1 꽃이피움 CAFE 앞',
             operatingHours: '10:00 - 21:00',
             contact: 'camcoder2024.official@gmail.com',
             googleMapLink: 'https://www.google.co.kr/maps/place/%EC%B9%B4%ED%8E%98+%EA%BD%83%EC%9D%B4%ED%94%BC%EC%9B%80+%EB%8F%99%EB%8D%95%EC%97%AC%EB%8C%80%EC%A0%90/data=!4m6!3m5!1s0x357cbc817884c247:0x86b18b311e341150!8m2!3d37.6058314!4d127.0404708!16s%2Fg%2F11g0kj81g2?hl=ko&entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D',
@@ -54,27 +58,34 @@ const UnivMap = () => {
                             <GoogleMap
                                 mapContainerStyle={containerStyle}
                                 center={university.position}
-                                zoom={15}
+                                zoom={17}
                             >
                                 <Marker position={university.position} />
                             </GoogleMap>
                         </LoadScript>
                     </MapContainer>
                     <InfoContainer>
+                        <UniversityName>{university.name}</UniversityName>
                         <TextContainer>
-                            <UniversityName>{university.name}</UniversityName>
-                            <LinkText href={university.googleMapLink} target="_blank" rel="noopener noreferrer">
-                                구글맵 링크
-                            </LinkText>
+                        <InfoText>{university.address}</InfoText>
+                        <Button_Map onClick={() => window.open(university.googleMapLink, "_blank")}>
+                            지도 보기
+                        </Button_Map>
                         </TextContainer>
-                        <InfoText>운영공간 | {university.address}</InfoText>
-                        <InfoText>운영시간 | {university.operatingHours}</InfoText>
-                        <InfoText>문의 | {university.contact}</InfoText>
                     </InfoContainer>
                 </UnivItem>
             ))}
+            <CoderContainer>
+                <Dot>•</Dot>
+                <Dot>•</Dot>
+                <Dot>•</Dot>
+                <CoderText>더 많은 대학과 캠코더 하길 원해요!</CoderText>
+                <Button_Coder onClick={() => window.open("https://forms.gle/v8dXGE9tii7oV22M7", "_blank")}>
+                    함께 코더하기
+                </Button_Coder>
+            </CoderContainer>
         </Container>
     );
 };
 
-export default UnivMap;
+export default UnivMap_Main;
