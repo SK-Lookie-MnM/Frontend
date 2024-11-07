@@ -19,12 +19,14 @@ export const NavWrapper = styled.div`
     visible ? "rgba(35, 68, 61, 1)" : "rgba(255, 255, 255, 1)"};
 
   width: 100%;
-  height: 146px;
-  white-space: nowrap;
+  height: ${({ visible }) =>
+    visible ? "300px" : "146px"}; /* visible에 따라 높이 조정 */
   flex-direction: column; /* 세로 방향으로 NavWrapper와 Dropdown 배치 */
   align-items: center;
-  justify-content: center;
-  position: relative;
+
+  font-family: "Pretendard-Medium";
+  font-size: 23px;
+  gap: 30px;
 `;
 
 export const InstaLogo = styled.img``;
@@ -45,7 +47,9 @@ export const UsersBox = styled.div`
 export const NavContainer = styled.nav`
   display: flex;
   flex-direction: row;
-  padding: 0 20px;
+  position: absolute
+  top: -80%; /* 수평 중앙 정렬 */
+  transform: translateY(80%); /* 중앙 정렬을 위해 이동 */
   align-items: center; /* 수직 가운데 정렬 */
   list-style: none; /* 마커 제거 */
   width: 100%;
@@ -57,18 +61,21 @@ export const NavBox = styled.ul`
   display: flex;
   list-style: none;
   cursor: pointer;
-  width: 742px;
+  width: 774px;
   height: 54px;
+  padding: 0 20px;
   justify-content: center;
   align-items: center;
 `;
 
 export const NavItem = styled.li`
-  margin-right: 30px; /* 각 메뉴 항목 사이 간격을 30px로 설정 */
+  flex: 1; /* 각 항목이 동일한 너비를 가짐 */
+  position: relative; /* 세부 메뉴를 절대 위치로 설정하기 위해 상대 위치 */
   display: flex;
   font-size: 23px;
-  position: relative;
-  align-items: center;
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center; /* 수직 가운데 정렬 */
+  
   color: ${({ visible }) =>
     visible ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)"};
 
@@ -76,19 +83,13 @@ export const NavItem = styled.li`
     margin-right: 0; /* 마지막 메뉴 항목은 오른쪽 간격을 없앰 */
   }
 
-  & > p {
-    cursor: pointer;
-    margin-right: 30px;
-    font-size: 25px; /* 글자 크기 설정 */
-    /* 각 메뉴 항목 사이의 간격을 30px로 설정 */
-    line-height: 0px; /* 줄 간격 설정 */
-
     &:hover {
       color: #03b888; /* 마우스 올릴 때 색깔 변화 */
     }
   }
 
   & > a {
+
     text-decoration: none; /* 링크의 밑줄 제거 */
     color: white; /* 링크 색상 설정 (원하는 색상으로 변경 가능) */
 
@@ -98,66 +99,47 @@ export const NavItem = styled.li`
   }
 `;
 
+export const DropDownBox = styled.div``;
+
 export const DropdownWrapper = styled.div`
-  position: absolute;
   top: 100%;
   width: 100%;
+  position: absolute;
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center; /* 수직 가운데 정렬 */
   display: flex;
   background-color: rgba(35, 68, 61, 1); /* 드롭다운 배경색 */
   animation: fadeIn 0.3s ease-in-out;
   z-index: 1000;
-`;
-
-export const DropdownMenuWrapper = styled.div``;
-
-export const Dropdown = styled.div`
-  display: flex;
-  width: 100%;
-  align-items: center;
-  margin-left: 150px;
-  padding: 0 20px;
+  overflow: visible; /* 내용이 잘리지 않도록 설정 */
 `;
 
 export const SubmenuWrapper = styled.div`
   display: flex;
-  width: 742px;
-  align-items: center;
-  flex-direction: row;
-  justify-content: center;
-
-  margin-left: 180px;
-`;
-export const SubmenuRow = styled.ul`
-  display: flex;
   flex-direction: column;
-  align-items: center; /* 수직 가운데 정렬 */
-`;
-export const SubmenuColumn = styled.li`
-  list-style: none;
-  display: flex;
-  margin-right: 30px;
-  justify-content: center; /* 수평 가운데 정렬 */
-  align-items: center; /* 수직 가운데 정렬 */
+  margin-top: 50px;
+  gap: 32px; /* 항목 간의 간격 설정 */
+  width: 739px;
+  height: 82px;
   font-family: "Pretendard-Regular";
   font-size: 21px;
+`;
+
+export const SubmenuColumn = styled.div`
+  display: flex; /* Flexbox 사용 */
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center; /* 수직 가운데 정렬 */
+  list-style: none;
+  white-space: nowrap;
+  font-family: "Pretendard-Regular";
+  font-size: 21px;
+  padding: 10px; /* 패딩 추가하여 여유 공간 확보 */
 
   & > li {
     cursor: pointer;
     &:hover {
       color: #03b888;
     }
-  }
-`;
-
-export const SubmenuItem = styled.div`
-  display: flex;
-  color: white;
-  list-style-type: none;
-  padding: 10px;
-  cursor: pointer;
-
-  &:hover {
-    color: #03b888;
   }
 `;
 
@@ -169,6 +151,5 @@ export const Logo = styled.img`
 
 export const LogoItem = styled.div`
   display: flex;
-
-  margin-right: 20px; /* 로고와 메뉴 사이 간격을 설정 */
+  padding: 0 20px;
 `;
