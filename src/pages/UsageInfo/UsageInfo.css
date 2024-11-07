@@ -2,6 +2,16 @@
     font-family: 'Hakgyoansim-Dunggeunmiso';
     src: url('../../fonts/Hakgyoansim-Dunggeunmiso-TTF-B.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../../fonts/Pretendard-Medium.ttf') format('truetype');
+}
+
+.usageInfo {
+    font-family: "Pretendard";
+}
+
 .joincamcoder {
     background-color: #E8EEEA;
     width: 100%;
@@ -27,7 +37,7 @@
 
 .title1 {
     font-size: 55px;
-    font-family: "Hakgyoansim-Dunggeunmiso";
+    font-family: "Hakgyoansim-Dunggeunmiso" !important;
     margin-bottom: 20px; /* 제목과 다음 요소 간의 간격 설정 */
     margin-top: 50px;
     margin-left: 200px;

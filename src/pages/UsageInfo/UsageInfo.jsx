@@ -17,7 +17,7 @@ const UsageInfo = () => {
     }
 
     return (
-        <div>
+        <div className="usageInfo">
             <div className="joincamcoder">
                 <div className="left-container">
                     <p className="title1">
