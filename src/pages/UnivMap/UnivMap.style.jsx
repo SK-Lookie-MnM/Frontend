@@ -20,8 +20,8 @@ export const Title = styled.h1`
 `;
 
 export const MapContainer = styled.div`
-    width: 50%;
-    height: 300px;
+    width: 715px;
+    height: 550px;
     margin-bottom: 20px;
     border-radius: 10px;
     overflow: hidden;
@@ -64,7 +64,7 @@ export const LinkText = styled.a`
 `;
 
 export const InfoText = styled.p`
-    margin-left: 20px;
+    margin-left: 50px;
   font-size: 0.9em;
 `;
 
@@ -73,7 +73,7 @@ export const TextContainer = styled.div`
     display: flex;
     align-items: center; /* 세로 중앙 정렬 */
     font-size: 21px;
-    margin-left: 20px;
-    margin-top: 100px;
+    margin-left: 50px;
+    margin-top: 400px;
     margin-bottom: 20px; /* 아래쪽 여백 */
 `;
