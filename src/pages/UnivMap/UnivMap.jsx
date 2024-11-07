@@ -37,7 +37,7 @@ const UnivMap = () => {
         },
         {
             name: '세종대학교',
-            address: '사울시 광진구 능동로209  행복기숙사(새날관) 세탁실 앞',
+            address: '서울시 광진구 능동로209  행복기숙사(새날관) 세탁실 앞',
             operatingHours: '10:00 - 21:00',
             contact: 'camcoder2024.official@gmail.com',
             googleMapLink: 'https://www.google.com/maps/place/%EC%84%B8%EC%A2%85%EB%8C%80%ED%95%99%EA%B5%90+%ED%96%89%EB%B3%B5%EA%B8%B0%EC%88%99%EC%82%AC(%EC%83%88%EB%82%A0%EA%B4%80)/@37.553262,127.0726568,15z/data=!4m2!3m1!1s0x0:0x822da47e82cbbfc?sa=X&ved=1t:2428&ictx=111',
