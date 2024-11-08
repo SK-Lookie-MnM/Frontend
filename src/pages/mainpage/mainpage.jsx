@@ -4,6 +4,7 @@ import mainheaderImg1 from "../../assets/mainpage/image1.png";
 import mainheaderImg2 from "../../assets/mainpage/image2.png";
 import mainheaderImg3 from "../../assets/mainpage/image3.png";
 import mainheaderImg4 from "../../assets/mainpage/image4.png";
+import mainheaderImg5 from "../../assets/mainpage/image5.png";
 import mainImgContent from "../../assets/mainpage/mainImgContents.png";
 import mainImgBigLogo from "../../assets/mainpage/mainBigLog0.png";
 // Import Swiper styles
@@ -94,7 +95,7 @@ import {
   ValueTextBold,
   ValueTextBox,
   ValueTextContainer,
-  ValueTitle,
+  ValueTitle, HeaderTextContainer5, Img5TextBox1, SlideWrapper5,
 } from "./mainpage.style.jsx";
 
 import AOS from "aos";
@@ -236,7 +237,18 @@ const MainPage = () => {
               </HeaderContainer4>
             </SlideWrapper3>
           </SwiperSlide>
-        </Swiper>
+        <SwiperSlide>
+          <SlideWrapper5>
+            <MainheaderImg src={mainheaderImg5} alt="img" />
+              <HeaderTextContainer5>
+                <Img5TextBox1>
+                  <p>재밌고, 간편하지만 확실한 환경보호는 없을까?</p>
+                  <p>캠코더가 찾아낸 지속가능한 혁신적 대안</p>
+                </Img5TextBox1>
+              </HeaderTextContainer5>
+          </SlideWrapper5>
+        </SwiperSlide>
+      </Swiper>
       </MainHeaderSlide>
       <MainContentsWrapper>
         <MainContents data-aos="fade-up">
