@@ -36,14 +36,21 @@ import {
 
 import { FaCheck } from "react-icons/fa6";
 import logo from "../../assets/icon/Signup/Group2609363.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { postData } from "./PostData.js";
 
 const SignUp = () => {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState("");
+
   const [name, setName] = useState("");
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
   const [passwordCheck, setPasswordCheck] = useState("");
   const [email, setEmail] = useState("");
+  const [type, setType] = useState("");
+  const [university, setUniversity] = useState("선택하세요");
 
   const [userIdMessage, setUserIdMessage] =
     useState("영문/숫자 포함 6자리 이상");
@@ -60,14 +67,15 @@ const SignUp = () => {
   const [isCheckEqualPassword, setIsCheckEqualPassword] = useState(false);
   const [emailCheck, setEmailCheck] = useState(false);
 
+  const [btn, setBtn] = useState(false);
+
   const options = ["동덕여대", "서울여대", "한국외대"];
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("선택하세요");
 
   const toggleDropdown = () => setIsOpen(!isOpen);
 
   const handleSelect = (option) => {
-    setSelectedOption(option);
+    setUniversity(option);
     setIsOpen(false);
   };
 
@@ -154,6 +162,56 @@ const SignUp = () => {
     } else {
       setNameMessage("");
       setIsCheckName(true);
+    }
+  };
+
+  const handleCheckboxChange = (event) => {
+    setType(event.target.value);
+  };
+
+  useEffect(() => {
+    if (isCheckName && emailCheck && isCheckUserId && isCheckPassword) {
+      setBtn(true);
+    } else {
+      setBtn(false);
+    }
+  }, [isCheckName, emailCheck, isCheckUserId, isCheckPassword]);
+
+  const handleSignup = async (e) => {
+    e.preventDefault();
+
+    if (university === "선택하세요") {
+      alert("대학을 선택해 주세요."); // 알림창 띄우기
+      return;
+    }
+
+    try {
+      const body = {
+        name: name,
+        loginId: userId,
+        email: email,
+        password: password,
+        passwordCheck: passwordCheck,
+        university: university,
+        role: type,
+        isCheckedId: true,
+        isCheckedEmail: true,
+      };
+
+      await postData("/api/users/signup", body);
+      console.log("회원가입 성공");
+      navigate("/login");
+    } catch (error) {
+      setLoading(false);
+    }
+  };
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+
+    if (btn) {
+      handleSignup(e);
+    } else {
+      alert("모든 정보를 빠짐없이 입력해주세요.");
     }
   };
 
@@ -261,9 +319,9 @@ const SignUp = () => {
             <DropdownContainer>
               <DropdownHeader
                 onClick={toggleDropdown}
-                isSelected={selectedOption !== "선택하세요"}
+                isSelected={university !== "선택하세요"}
               >
-                {selectedOption}
+                {university}
               </DropdownHeader>
               {isOpen && (
                 <DropdownListContainer>
@@ -282,11 +340,29 @@ const SignUp = () => {
           <CheckContainer>
             <Label>5. 회원유형을 선택하세요</Label>
             <CheckField>
-              <Checkbox /> 일반 대학생 <Checkbox /> 팀 MNM
-              <Checkbox /> 운영진
+              <Checkbox
+                value="MEMBER"
+                onChange={handleCheckboxChange}
+                checked={type === "MEMBER"}
+              />{" "}
+              일반 대학생{" "}
+              <Checkbox
+                value="ADMIN"
+                onChange={handleCheckboxChange}
+                checked={type === "ADMIN"}
+              />{" "}
+              팀 MNM
+              <Checkbox
+                value="MANAGER"
+                onChange={handleCheckboxChange}
+                checked={type === "MANAGER"}
+              />{" "}
+              운영진
             </CheckField>
           </CheckContainer>
-          <Button>캠코더 가입하기</Button>
+          <Button onClick={handleButtonClick}>
+            {loading ? "Loading..." : "캠코더 가입하기"}
+          </Button>
         </SignUpForm>
       </SignUpContents>
     </SignUpSection>
