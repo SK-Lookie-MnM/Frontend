@@ -35,7 +35,7 @@ export const Login = () => {
     } else {
       setBtn(true);
     }
-  });
+  }, [id, password]);
   //페이지 로드 시 쿠키에서 아이디 불러오기
   useEffect(() => {
     if (cookies.rememberedId) {
