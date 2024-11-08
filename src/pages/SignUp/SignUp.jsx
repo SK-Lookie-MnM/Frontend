@@ -11,11 +11,20 @@ import {
   IconWrapper,
   IdInputContainer,
   Input,
+  InputCheck,
   InputContainer,
+  InputEmail,
+  InputEmailBox,
+  InputEmailCheckButton,
+  InputEmailContainer,
+  InputEmailField,
   InputField,
+  InputNameField,
+  InputUniversityField,
   Label,
   Line,
   NameInputContainer,
+  PasswordCheckContainer,
   PasswordInputContainer,
   SignUpContents,
   SignUpForm,
@@ -33,14 +42,23 @@ const SignUp = () => {
   const [name, setName] = useState("");
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordCheck, setPasswordCheck] = useState("");
+  const [email, setEmail] = useState("");
 
-  const [userIdMessage, setUserIdMessage] = useState("");
-  const [passwordMessage, setPasswordMessage] = useState("");
+  const [userIdMessage, setUserIdMessage] =
+    useState("영문/숫자 포함 6자리 이상");
+  const [passwordMessage, setPasswordMessage] =
+    useState("영문/숫자 포함 8자리 이상");
   const [nameMessage, setNameMessage] = useState("");
+  const [emailMessage, setEmailMessage] = useState("");
+  const [passwordCheckMessage, setPasswordCheckMessage] =
+    useState("비밀번호를 확인하세요");
 
   const [isCheckUserId, setIsCheckUserId] = useState(false);
   const [isCheckName, setIsCheckName] = useState(false);
   const [isCheckPassword, setIsCheckPassword] = useState(false);
+  const [isCheckEqualPassword, setIsCheckEqualPassword] = useState(false);
+  const [emailCheck, setEmailCheck] = useState(false);
 
   const options = ["동덕여대", "서울여대", "한국외대"];
   const [isOpen, setIsOpen] = useState(false);
@@ -62,8 +80,8 @@ const SignUp = () => {
     if (value.trim() === "") {
       setUserIdMessage("아이디를 입력하세요.");
       setIsCheckUserId(false);
-    } else if (value.length < 8) {
-      setUserIdMessage("최소 8자리 이상 입력해주세요.");
+    } else if (value.length < 6) {
+      setUserIdMessage("최소 6자리 이상 입력해주세요.");
       setIsCheckUserId(false);
     } else if (!regExp.test(value)) {
       setUserIdMessage("아이디는 영문과 숫자를 포함해야 합니다.");
@@ -74,9 +92,41 @@ const SignUp = () => {
     }
   };
 
+  const isEqualPassword = (value) => {
+    setPasswordCheck(value);
+    if (value.trim() === "") {
+      setPasswordCheckMessage("비밀번호를 다시 입력해주세요.");
+      setIsCheckEqualPassword(true);
+    } else if (value.trim() === password) {
+      setIsCheckEqualPassword(true);
+      setPasswordCheckMessage("비밀번호가 맞습니다.");
+    } else {
+      setIsCheckEqualPassword(false);
+      setPasswordCheckMessage("비밀번호가 틀립니다.");
+    }
+  };
+
+  //이메일 유효성 검사
+  const checkEmail = (value) => {
+    //영어 소문자, 숫자, @와 .을 포함
+    const regExp = /^[a-z0-9]+@[a-z0-9]+\.[a-z]+$/;
+    setEmail(value);
+
+    if (value.trim() === "") {
+      setEmailMessage("이메일을 입력해주세요.");
+      setEmailCheck(false);
+    } else if (!regExp.test(value)) {
+      setEmailMessage("유효하지 않은 이메일 형식입니다.");
+      setEmailCheck(false);
+    } else {
+      setEmailMessage("");
+      setEmailCheck(true);
+    }
+  };
+
   const checkPassword = (value) => {
     //비밀번호 유효성 검사
-    // 영문과 숫자를 포함하고 8자 이상
+    //영문과 숫자를 포함하고 8자 이상
     const regExp = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
 
     setPassword(value);
@@ -151,8 +201,24 @@ const SignUp = () => {
               </InputContainer>
               <Warn>{passwordMessage}</Warn>
             </PasswordInputContainer>
+            <PasswordCheckContainer>
+              <InputContainer>
+                <InputCheck
+                  type="password"
+                  placeholder="비밀번호 입력"
+                  value={passwordCheck}
+                  onChange={(e) => isEqualPassword(e.target.value.trim())}
+                  isCompleted={isCheckEqualPassword}
+                />
+                <IconWrapper isCompleted={isCheckPassword}>
+                  <FaCheck />
+                </IconWrapper>
+              </InputContainer>
+              <Warn>{passwordCheckMessage}</Warn>
+            </PasswordCheckContainer>
           </InputField>
-          <InputField>
+
+          <InputNameField>
             <Label>2. 이름을 설정해주세요.</Label>
             <NameInputContainer>
               <InputContainer>
@@ -169,9 +235,29 @@ const SignUp = () => {
               </InputContainer>
               <Warn>{nameMessage}</Warn>
             </NameInputContainer>
-          </InputField>
-          <InputField>
-            <Label>3. 소속대학을 선택하세요.</Label>
+          </InputNameField>
+          <InputEmailField>
+            <Label>3. 이메일을 입력해주세요.</Label>
+            <InputEmailContainer>
+              <InputEmailBox>
+                <InputEmail
+                  type="email"
+                  placeholder="이메일 입력 ex) sklookie_mnm@naver.com"
+                  value={email}
+                  onChange={(e) => checkEmail(e.target.value.trim())}
+                  isCompleted={emailCheck}
+                ></InputEmail>
+                <IconWrapper isCompleted={isCheckName}>
+                  <FaCheck />
+                </IconWrapper>
+              </InputEmailBox>
+
+              <InputEmailCheckButton>확인</InputEmailCheckButton>
+            </InputEmailContainer>
+            <Warn>{emailMessage}</Warn>
+          </InputEmailField>
+          <InputUniversityField>
+            <Label>4. 소속대학을 선택하세요.</Label>
             <DropdownContainer>
               <DropdownHeader
                 onClick={toggleDropdown}
@@ -192,9 +278,9 @@ const SignUp = () => {
                 </DropdownListContainer>
               )}
             </DropdownContainer>
-          </InputField>
+          </InputUniversityField>
           <CheckContainer>
-            <Label>4. 회원유형을 선택하세요</Label>
+            <Label>5. 회원유형을 선택하세요</Label>
             <CheckField>
               <Checkbox /> 일반 대학생 <Checkbox /> 팀 MNM
               <Checkbox /> 운영진
