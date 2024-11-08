@@ -33,7 +33,7 @@ export const SignUpForm = styled.div`
   align-items: center;
   padding: 80px 0; /* 내부 패딩 */
   border-radius: 12.93px;
-  gap: 40px;
+  gap: 35px;
 `;
 
 export const CamcoderLogo = styled.img`
@@ -59,25 +59,64 @@ export const InputField = styled.div`
   align-items: center;
   justify-content: center;
   width: 790px;
-  gap: 20px; /* 라벨과 인풋 사이 간격 */
+  height: 339.23px;
+  gap: 15px; /* 라벨과 인풋 사이 간격 */
+`;
+
+export const InputNameField = styled.div`
+  display: flex;
+  flex-direction: column; /* 수직 배치 */
+  align-items: center;
+  justify-content: center;
+  width: 790px;
+  height: 109.23px;
+  gap: 15px; /* 라벨과 인풋 사이 간격 */
+`;
+export const InputEmailField = styled.div`
+  display: flex;
+  flex-direction: column; /* 수직 배치 */
+  width: 790px;
+  height: 109.23px;
+  gap: 15px; /* 라벨과 인풋 사이 간격 */
+`;
+
+export const InputUniversityField = styled.div`
+  display: flex;
+  flex-direction: column; /* 수직 배치 */
+  align-items: center;
+  justify-content: center;
+  width: 790px;
+  height: 109.23px;
+  gap: 15px; /* 라벨과 인풋 사이 간격 */
 `;
 
 export const IdInputContainer = styled.div`
   display: flex;
-  width: 790px;
+  width: 100%;
+  height: 93px;
   flex-direction: column; /* 수직 배치 */
-  gap: 10px; /* warn 메세지와 인풋 사이 간격 */
+  gap: 7px; /* warn 메세지와 인풋 사이 간격 */
 `;
 
 export const PasswordInputContainer = styled.div`
   display: flex;
-  width: 790px;
+  width: 100%;
+  height: 93px;
   flex-direction: column; /* 수직 배치 */
   gap: 10px; /* 라벨과 인풋 사이 간격 */
 `;
+export const PasswordCheckContainer = styled.div`
+  display: flex;
+  width: 100%;
+  height: 93px;
+  flex-direction: column; /* 수직 배치 */
+  gap: 7px;
+`;
+
 export const NameInputContainer = styled.div`
   display: flex;
   width: 790px;
+  height: 59px;
   flex-direction: column; /* 수직 배치 */
   gap: 10px; /* 라벨과 인풋 사이 간격 */
 `;
@@ -100,8 +139,9 @@ export const Label = styled.div`
 
 export const Input = styled.input`
   width: 100%;
-  max-width: 790px;
-  height: 40px;
+  height: 59px;
+  font-family: "Pretendard-Regular";
+  font-size: 19.9px;
   border-radius: 12.98px;
   border: 2px solid ${(props) => (props.isCompleted ? "green" : "gray")};
   padding: 5px 40px 5px 10px; // 오른쪽 패딩을 추가하여 아이콘 위치 공간 확보
@@ -111,6 +151,56 @@ export const Input = styled.input`
   &:focus {
     outline: none;
   }
+
+  &::placeholder {
+    padding: 15px;
+  }
+`;
+
+export const InputCheck = styled.input`
+  width: 100%;
+  height: 59px;
+  border-radius: 12.98px;
+  border: 2px solid
+    ${(props) => (props.isCompleted ? "green" : "rgba(35, 68, 61, 1)")};
+  padding: 5px 40px 5px 10px; // 오른쪽 패딩을 추가하여 아이콘 위치 공간 확보
+  color: ${(props) => (props.isCompleted ? "green" : "black")};
+  transition: border-color 0.3s ease;
+  font-size: 19.9px;
+  font-family: "Pretendard-Regular";
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: rgba(35, 68, 61, 1);
+    font-size: 19.9px;
+    font-family: "Pretendard-Regular";
+    padding: 15px;
+  }
+`;
+
+export const InputEmail = styled.input`
+  width: 100%;
+  height: 59px;
+  border-radius: 12.98px;
+  font-family: "Pretendard-Regular";
+  font-size: 19.9px;
+  border: 2px solid ${(props) => (props.isCompleted ? "green" : "gray")};
+  padding: 5px 40px 5px 10px; // 오른쪽 패딩을 추가하여 아이콘 위치 공간 확보
+  color: ${(props) => (props.isCompleted ? "green" : "black")};
+  transition: border-color 0.3s ease;
+  position: relative;
+  display: flex;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    padding: 15px;
+  }
 `;
 
 export const InputContainer = styled.div`
@@ -119,6 +209,28 @@ export const InputContainer = styled.div`
   display: flex;
 `;
 
+export const InputEmailContainer = styled.div`
+  width: 791px;
+  position: relative;
+  display: flex;
+  gap: 21px;
+`;
+
+export const InputEmailBox = styled.div`
+  width: 668px;
+  position: relative;
+  display: flex;
+  gap: 21px;
+`;
+export const InputEmailCheckButton = styled.button`
+  width: 102px;
+  height: 59px;
+  font-family: "Pretendard-Semi-Bold";
+  font-size: 22px;
+  border-radius: 12.98px;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(35, 68, 61, 1);
+`;
 export const IconWrapper = styled.div`
   position: absolute;
   top: 50%;
@@ -133,6 +245,8 @@ export const Button = styled.button`
   border-radius: 8.75px;
   background-color: #23443d;
   color: #ffffff;
+  font-family: "Pretendard-Semi-Bold";
+  font-size: 24.57px;
 `;
 
 export const CheckContainer = styled.div`

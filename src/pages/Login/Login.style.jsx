@@ -36,7 +36,14 @@ export const LoginFormContainer = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
+export const Mes = styled.div`
+  display: flex;
+  width: 384px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--Spacing-1, 4px);
+  color: #ff616a;
+`;
 export const IdInputbox = styled.div`
   display: flex;
   align-items: center;

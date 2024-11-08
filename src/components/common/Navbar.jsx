@@ -17,6 +17,8 @@ import {
   SubmenuColumn,
   NavBox,
   SubmenuWrapper,
+  StyledLink,
+  InstagramLink,
 } from "./Navbar.style"; // styled-components로 정의된 스타일 임포트
 
 const Navbar = () => {
@@ -101,11 +103,13 @@ const Navbar = () => {
           ))}
         </NavBox>
         <UsersBox visible={showDropdown}>
-          <p>로그인</p>
+          <StyledLink to="/login">로그인</StyledLink>
           <a>|</a>
-          <p>회원가입</p>
+          <StyledLink to="/signup">회원가입</StyledLink>
           <a>|</a>
-          <InstaLogo src={instaLogo} />
+          <InstagramLink>
+            <InstaLogo src={instaLogo} />
+          </InstagramLink>
         </UsersBox>
       </NavContainer>
     </NavWrapper>

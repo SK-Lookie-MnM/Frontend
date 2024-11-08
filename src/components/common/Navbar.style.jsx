@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Nav = styled.nav`
@@ -38,7 +39,7 @@ export const UsersBox = styled.div`
   height: 74px;
   background-color: ${({ visible }) =>
     visible ? "rgba(35, 68, 61, 1)" : "rgba(255, 255, 255, 1)"};
-
+  margin-right: 20px;
   gap: 8px;
   font-family: "Pretendard-Regular";
   font-size: 20px;
@@ -152,4 +153,22 @@ export const Logo = styled.img`
 export const LogoItem = styled.div`
   display: flex;
   padding: 0 20px;
+`;
+
+export const StyledLink = styled(Link)`
+  color: inherit; /* 부모의 색상 상속 */
+  text-decoration: none; /* 밑줄 제거 */
+
+  &:hover {
+    color: rgba(35, 68, 61, 1); /* 마우스 오버 시 색상 변화 */
+  }
+`;
+
+export const InstagramLink = styled.a`
+  color: inherit; /* 부모의 색상 상속 */
+  text-decoration: none; /* 밑줄 제거 */
+
+  &:hover {
+    color: #03b888; /* 마우스 오버 시 색상 변화 */
+  }
 `;
