@@ -443,7 +443,6 @@ const MainPage = () => {
           </TogetherText>
           <CoderBtn>함께 코더하기</CoderBtn>
         </TogetherContainer>
-        ,
       </TogetherWrapper>
     </MainWrapper>
   );

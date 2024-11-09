@@ -15,7 +15,8 @@ const Value = () => {
             <div className="banner">
                 <img src={banner} className="banner_bg" alt="banner"/>
                 <p className="banner-text">LESS BUT BETTER <br/>
-                    환경을 위해 지속가능한 혁신적 대안을 찾아내다</p>
+                    환경을 위해 지속가능한 <br/>
+                    혁신적 대안을 찾아내다</p>
             </div>
             <div className="info">
                 <hr className="hr_1"/>
