@@ -25,14 +25,12 @@ import {
   AboutUsTitleBox,
   AboutUsWrapper,
   AboutusTitle,
-  CircleWrapper,
   CoderBtn,
   ContentsImg,
   ContentsTextBold,
   ContentsTextBox1,
   ContentsTextBox2,
   ContentsTextContainer,
-  CooperationText,
   DividingLine,
   Dot1,
   Dot2,
@@ -62,12 +60,8 @@ import {
   InstaLogo,
   LineBold,
   LineLight,
-  LogoImage,
   MainContents,
   MainContentsWrapper,
-  MainCooperation,
-  MainCooperationContainer,
-  MainCooperationWrapper,
   MainHeaderSlide,
   MainValueContainer,
   MainValueWrapper,
@@ -108,7 +102,6 @@ import img3 from "../../assets/mainpage/mainpage_contents_3.png";
 import valueImg1 from "../../assets/mainpage/value_img_1.png";
 import valueImg2 from "../../assets/mainpage/value_img_2.png";
 import valueImg3 from "../../assets/mainpage/value_img_3.png";
-import cooperationLogo from "../../assets/mainpage/Cooperation_Logo.png";
 import mnmLogo from "../../assets/mainpage/MNM_Logo.png";
 import aboutImg1 from "../../assets/mainpage/aboutus/AboutImg1.png";
 import aboutImg2 from "../../assets/mainpage/aboutus/AboutImg2.png";
