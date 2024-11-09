@@ -13,11 +13,10 @@
 .banner-text {
     position: absolute; /* 텍스트를 이미지 위에 배치 */
     top: 60%; /* 세로 위치 조정 */
-    margin-left: 1000px;
-    font-weight: bold; /* 진하고 두꺼운 글씨 */
-    font-size: 35px; /* 글자 크기 조정 */
+    margin-left: 75rem;
     color: white; /* 흰색 글씨 */
     text-align: right;
+    line-height: 50px;
 }
 
 .value {
