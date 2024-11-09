@@ -174,3 +174,7 @@ strong {
     margin-top: 200px;
     letter-spacing: 1.5px;
 }
+
+* {
+    font-family: 'Pretendard-Medium';
+}
