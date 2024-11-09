@@ -344,28 +344,6 @@ const MainPage = () => {
           </ValueImgContainer>
         </MainValueContainer>
       </MainValueWrapper>
-      <MainCooperationWrapper>
-        <MainCooperationContainer data-aos="zoom-in">
-          <CooperationText>우리의 가치에 동참하는 가족들</CooperationText>
-          <MainCooperation>
-            <CircleWrapper>
-              <LogoImage src={cooperationLogo} />
-            </CircleWrapper>
-            <CircleWrapper>
-              <LogoImage src={cooperationLogo} />
-            </CircleWrapper>
-            <CircleWrapper>
-              <LogoImage src={cooperationLogo} />
-            </CircleWrapper>
-            <CircleWrapper>
-              <LogoImage src={cooperationLogo} />
-            </CircleWrapper>
-            <CircleWrapper>
-              <LogoImage src={cooperationLogo} />
-            </CircleWrapper>
-          </MainCooperation>
-        </MainCooperationContainer>
-      </MainCooperationWrapper>
       <DividingLine>LESS BUT BETTER</DividingLine>
       <AboutUsWrapper>
         <AboutUsContainer>
