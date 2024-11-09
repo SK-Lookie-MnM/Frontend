@@ -861,7 +861,7 @@ export const TogetherText = styled.div`
   width: 806px;
   height: 101px;
   color: rgba(35, 68, 61, 1);
-  font-size: 32.01px;
+  font-size: 25px;
   font-family: Pretendard-Medium;  
   a: nth-child(1) {
     font-family: Pretendard-Bold;
