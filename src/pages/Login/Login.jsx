@@ -75,8 +75,6 @@ export const Login = () => {
         const accessToken = response.data.accessToken;
         localStorage.setItem("accessToken", accessToken); // 저장
 
-        console.log("응답 200");
-
         setTimeout(() => {
           window.location.href = "/"; // 새로고침하면서 홈 화면으로 이동
         }, 700);
@@ -122,6 +120,7 @@ export const Login = () => {
         ) : null}
         <PwdInputbox>
           <PwdInput
+            type="password"
             placeholder="Enter Your Password"
             value={password}
             onChange={(e) => {
