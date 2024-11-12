@@ -38,11 +38,10 @@ import { FaCheck } from "react-icons/fa6";
 import logo from "../../assets/icon/Signup/Group2609363.png";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { postData } from "./PostData.js";
+import { postData } from "../../services/api.jsx";
 
 const SignUp = () => {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState("");
 
   const [name, setName] = useState("");
   const [userId, setUserId] = useState("");
@@ -117,7 +116,7 @@ const SignUp = () => {
   //이메일 유효성 검사
   const checkEmail = (value) => {
     //영어 소문자, 숫자, @와 .을 포함
-    const regExp = /^[a-z0-9]+@[a-z0-9]+\.[a-z]+$/;
+    const regExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     setEmail(value);
 
     if (value.trim() === "") {
@@ -135,18 +134,20 @@ const SignUp = () => {
   const checkPassword = (value) => {
     //비밀번호 유효성 검사
     //영문과 숫자를 포함하고 8자 이상
-    const regExp = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
+
+    const regExp =
+      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,30}$/;
 
     setPassword(value);
 
     if (value.trim() === "") {
       setPasswordMessage("비밀번호를 입력해주세요.");
       setIsCheckPassword(false);
-    } else if (value.length < 8) {
-      setPasswordMessage("최소 8자리 이상 입력해주세요.");
+    } else if (value.length < 8 || value.length > 30) {
+      setPasswordMessage("비밀번호는 최소 8자리, 최대30 자리로 입력해주세요.");
       setIsCheckPassword(false);
     } else if (!regExp.test(value)) {
-      setPasswordMessage("비밀번호는 영문과 숫자를 포함해야 합니다.");
+      setPasswordMessage("비밀번호는 영문, 숫자, 특수문자를 포함해야 합니다.");
       setIsCheckPassword(false);
     } else {
       setPasswordMessage("");
@@ -185,30 +186,37 @@ const SignUp = () => {
       return;
     }
 
+    console.log("회원가입");
+    // eslint-disable-next-line no-useless-catch
     try {
       const body = {
         name: name,
         loginId: userId,
         email: email,
         password: password,
-        passwordCheck: passwordCheck,
+        checkedPassword: passwordCheck,
         university: university,
         role: type,
         isCheckedId: true,
         isCheckedEmail: true,
       };
 
+      console.log(body);
+
       await postData("/api/users/signup", body);
+
       console.log("회원가입 성공");
       navigate("/login");
     } catch (error) {
-      setLoading(false);
+      throw error;
     }
   };
+
   const handleButtonClick = (e) => {
     e.preventDefault();
-
+    console.log("회원가입");
     if (btn) {
+      console.log("회원가입");
       handleSignup(e);
     } else {
       alert("모든 정보를 빠짐없이 입력해주세요.");
@@ -360,9 +368,7 @@ const SignUp = () => {
               운영진
             </CheckField>
           </CheckContainer>
-          <Button onClick={handleButtonClick}>
-            {loading ? "Loading..." : "캠코더 가입하기"}
-          </Button>
+          <Button onClick={handleButtonClick}>캠코더 가입하기</Button>
         </SignUpForm>
       </SignUpContents>
     </SignUpSection>

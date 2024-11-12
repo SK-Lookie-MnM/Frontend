@@ -15,12 +15,11 @@ import {
   StyledLink,
   WelcomTitle,
 } from "./Login.style";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
+
 import { useCookies } from "react-cookie";
+import { postData } from "../../services/api";
 
 export const Login = () => {
-  const navigate = useNavigate();
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [btn, setBtn] = useState(false);
@@ -44,16 +43,13 @@ export const Login = () => {
     }
   }, [cookies]);
   //비어있지 않아야 로그인 버튼이 동작
-  const handleButtonClick = (e) => {
-    e.preventDefault();
+  const handleButtonClick = () => {
     if (btn) {
-      handleLogin(e);
+      handleLogin();
     }
   };
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-
+  const handleLogin = async () => {
     setLoading(true);
 
     try {
@@ -62,18 +58,35 @@ export const Login = () => {
         password: password,
       };
 
-      await axios.post("https://sklookiemnm.shop/api/users/login", body);
+      const response = await postData("/api/users/login", body);
 
-      // 로그인 성공 시 아이디 기억하기 설정
-      if (rememberId) {
-        setCookie("rememberedId", id, { path: "/", maxAge: 7 * 24 * 60 * 60 }); // 쿠키 유효기간 7일
+      console.log(response);
+      if (response.status === 200) {
+        // 로그인 성공 시 아이디 기억하기 설정
+        if (rememberId) {
+          setCookie("rememberedId", id, {
+            path: "/",
+            maxAge: 7 * 24 * 60 * 60,
+          }); // 쿠키 유효기간 7일
+        } else {
+          removeCookie("rememberedId");
+        }
+
+        const accessToken = response.data.accessToken;
+        localStorage.setItem("accessToken", accessToken); // 저장
+
+        console.log("응답 200");
+
+        setTimeout(() => {
+          window.location.href = "/"; // 새로고침하면서 홈 화면으로 이동
+        }, 700);
       } else {
-        removeCookie("rememberedId");
+        console.log("응답 200 xx");
+        alert("로그인에 실패하였습니다."); // 응답이 200이 아닌 경우 표시
       }
-
-      navigate("/");
     } catch (error) {
       setLoading(false);
+      console.error("로그인 오류:", error); // 오류 로그 확인
       if (error.response && error.response.status == 400) {
         setMes(true);
       } else {

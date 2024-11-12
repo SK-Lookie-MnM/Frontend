@@ -29,10 +29,17 @@ export const NavWrapper = styled.div`
   font-size: 23px;
   gap: 30px;
 `;
-
+export const LoginContainer = styled.div`
+  transform: ${({ isLoggingOut }) =>
+    isLoggingOut ? "translateY(-10px)" : "translateY(0)"};
+  transition: transform 0.5s ease;
+  display: flex;
+  gap: 10px; /* 여백 조정 */
+`;
 export const InstaLogo = styled.img``;
 export const UsersBox = styled.div`
   display: flex;
+  white-space: nowrap; /* 줄바꿈 방지 */
   justify-content: center; /* 수평 가운데 정렬 */
   align-items: center; /* 수직 가운데 정렬 */
   width: 199px;
@@ -167,6 +174,7 @@ export const StyledLink = styled(Link)`
 export const InstagramLink = styled.a`
   color: inherit; /* 부모의 색상 상속 */
   text-decoration: none; /* 밑줄 제거 */
+  display: inline-block; /* 클릭 가능한 전체 영역 설정 */
 
   &:hover {
     color: #03b888; /* 마우스 오버 시 색상 변화 */

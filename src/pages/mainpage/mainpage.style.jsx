@@ -165,32 +165,32 @@ export const HeaderTextContainer3 = styled.div`
 `;
 
 export const HeaderTextContainer5 = styled.div`
-    display: flex;
-    position: relative;
-    width: 100%;
-    flex-direction: row;
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-direction: row;
 `;
 export const Img5TextBox1 = styled.div`
   font-family: "Pretendard-Semi-Bold";
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    justify-content: center;
-    width: 556px;
-    height: 200px;
-    bottom: 0; /* 아래쪽에 정렬 */
-    right: 0;  /* 오른쪽에 정렬 */
-    margin-right: 110px; /* 오른쪽 여백 */
-    margin-bottom: 1.5rem;
-    line-height: 50px;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 30px;
-    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* 그림자 추가 */
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  width: 556px;
+  height: 200px;
+  bottom: 0; /* 아래쪽에 정렬 */
+  right: 0; /* 오른쪽에 정렬 */
+  margin-right: 110px; /* 오른쪽 여백 */
+  margin-bottom: 1.5rem;
+  line-height: 50px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 30px;
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* 그림자 추가 */
 `;
 export const SlideWrapper5 = styled.div`
-    display: flex;
-    position: relative;
+  display: flex;
+  position: relative;
 `;
 
 export const Img3TextBox1 = styled.div`
@@ -689,7 +689,13 @@ export const ImageTextBox4 = styled.div`
     font-family: "Pretendard-Medium";
   }
 `;
+export const InstagramLink = styled.a`
+  display: inline-block; /* 클릭 가능한 전체 영역 설정 */
 
+  &:hover {
+    color: #03b888; /* 마우스 오버 시 색상 변화 */
+  }
+`;
 export const InstaLogo = styled.img`
   position: absolute;
   width: 31px;
@@ -862,7 +868,7 @@ export const TogetherText = styled.div`
   height: 101px;
   color: rgba(35, 68, 61, 1);
   font-size: 25px;
-  font-family: Pretendard-Medium;  
+  font-family: Pretendard-Medium;
   a: nth-child(1) {
     font-family: Pretendard-Bold;
   }

@@ -89,7 +89,11 @@ import {
   ValueTextBold,
   ValueTextBox,
   ValueTextContainer,
-  ValueTitle, HeaderTextContainer5, Img5TextBox1, SlideWrapper5,
+  ValueTitle,
+  HeaderTextContainer5,
+  Img5TextBox1,
+  SlideWrapper5,
+  InstagramLink,
 } from "./mainpage.style.jsx";
 
 import AOS from "aos";
@@ -230,18 +234,18 @@ const MainPage = () => {
               </HeaderContainer4>
             </SlideWrapper3>
           </SwiperSlide>
-        <SwiperSlide>
-          <SlideWrapper5>
-            <MainheaderImg src={mainheaderImg5} alt="img" />
+          <SwiperSlide>
+            <SlideWrapper5>
+              <MainheaderImg src={mainheaderImg5} alt="img" />
               <HeaderTextContainer5>
                 <Img5TextBox1>
                   <p>재밌고, 간편하지만 확실한 환경보호는 없을까?</p>
                   <p>캠코더가 찾아낸 지속가능한 혁신적 대안</p>
                 </Img5TextBox1>
               </HeaderTextContainer5>
-          </SlideWrapper5>
-        </SwiperSlide>
-      </Swiper>
+            </SlideWrapper5>
+          </SwiperSlide>
+        </Swiper>
       </MainHeaderSlide>
       <MainContentsWrapper>
         <MainContents data-aos="fade-up">
@@ -366,7 +370,13 @@ const MainPage = () => {
                     <a>동덕여자대학교</a>
                     <a>SK LOOKIE ㅣ DDSL</a>
                   </ImageTextBox3>
-                  <InstaLogo src={instaLogo} />
+                  <InstagramLink
+                    href="https://www.instagram.com/sklookie_ddwu/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <InstaLogo src={instaLogo} />
+                  </InstagramLink>
                 </ImageTextContainer2>
               </ImageWrapper>
               <ImageWrapper>
@@ -379,7 +389,13 @@ const MainPage = () => {
                       동아리입니다.
                     </p>
                   </ImageTextBox4>
-                  <InstaLogo src={instaLogo} />
+                  <InstagramLink
+                    href="https://www.instagram.com/sklookie_official/?igsh=MXNub3FrbnZkNzFkdg%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <InstaLogo src={instaLogo} />
+                  </InstagramLink>
                 </ImageTextContainer3>
               </ImageWrapper>
             </AboutUsImgBox>
@@ -415,7 +431,13 @@ const MainPage = () => {
                   </ImgSideTextBoxDes3>
                 </AboutUsImgSideTextbox3>
               </AboutUsImgSideTextContainer>
-              <SideInstaLogo src={instaLogo} />
+              <InstagramLink
+                href="https://www.instagram.com/mnm_ddsl/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SideInstaLogo src={instaLogo} />
+              </InstagramLink>
             </AboutUsImgSideContainer>
           </AboutUsImgContainer>
         </AboutUsContainer>
