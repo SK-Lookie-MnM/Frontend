@@ -156,6 +156,7 @@ export const LoginBtn = styled.div`
   font-size: 20px;
   color: rgba(255, 255, 255, 1);
   background-color: rgba(35, 68, 61, 1);
+  cursor: pointer; /* 클릭 가능하게 설정 */
 `;
 export const SignUpMent = styled.div`
   display: flex;
