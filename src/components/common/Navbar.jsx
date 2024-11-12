@@ -19,10 +19,13 @@ import {
   SubmenuWrapper,
   StyledLink,
   InstagramLink,
+  LoginContainer,
 } from "./Navbar.style"; // styled-components로 정의된 스타일 임포트
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
 
   const menuLst = ["소개", "가이드", "연합", "NEWS", "캠코더 맵", "문의"];
 
@@ -60,6 +63,27 @@ const Navbar = () => {
   const handleLogoClick = () => {
     navigate("/"); // 로고 클릭 시 홈 화면으로 이동
   };
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken");
+    setIsLoggingOut(true); // 애니메이션 트리거
+  };
+
+  useEffect(() => {
+    const token = localStorage.getItem("accessToken");
+    if (token) {
+      setIsAuthenticated(true); // 로그인 상태로 설정
+    }
+  }, [navigate]);
+
+  useEffect(() => {
+    if (isLoggingOut) {
+      const timer = setTimeout(() => {
+        setIsLoggingOut(false); // 애니메이션 상태 초기화
+        setIsAuthenticated(false); // 로그인 상태 해제
+      }, 500); // 애니메이션 시간과 일치
+      return () => clearTimeout(timer); // 타이머 정리
+    }
+  }, [isLoggingOut]);
 
   return (
     <NavWrapper visible={showDropdown} onMouseLeave={() => handleMouseLeave()}>
@@ -103,13 +127,37 @@ const Navbar = () => {
           ))}
         </NavBox>
         <UsersBox visible={showDropdown}>
-          <StyledLink to="/login">로그인</StyledLink>
-          <a>|</a>
-          <StyledLink to="/signup">회원가입</StyledLink>
-          <a>|</a>
-          <InstagramLink>
-            <InstaLogo src={instaLogo} />
-          </InstagramLink>
+          {isAuthenticated ? (
+            <>
+              {" "}
+              <StyledLink to="/mypage">마이페이지</StyledLink>
+              <a>|</a>
+              <StyledLink onClick={handleLogout}>로그아웃</StyledLink>
+              <a>|</a>
+              <InstagramLink
+                href="https://www.instagram.com/mnm_ddsl/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <InstaLogo src={instaLogo} />
+              </InstagramLink>
+            </>
+          ) : (
+            <LoginContainer isLoggingOut={isLoggingOut}>
+              {" "}
+              <StyledLink to="/login">로그인</StyledLink>
+              <a>|</a>
+              <StyledLink to="/signup">회원가입</StyledLink>
+              <a>|</a>
+              <InstagramLink
+                href="https://www.instagram.com/mnm_ddsl/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <InstaLogo src={instaLogo} />
+              </InstagramLink>
+            </LoginContainer>
+          )}
         </UsersBox>
       </NavContainer>
     </NavWrapper>

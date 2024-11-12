@@ -247,6 +247,7 @@ export const Button = styled.button`
   color: #ffffff;
   font-family: "Pretendard-Semi-Bold";
   font-size: 24.57px;
+  cursor: pointer;
 `;
 
 export const CheckContainer = styled.div`
