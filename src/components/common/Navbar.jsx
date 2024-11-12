@@ -73,7 +73,7 @@ const Navbar = () => {
     if (token) {
       setIsAuthenticated(true); // 로그인 상태로 설정
     }
-  }, [navigate]);
+  }, []);
 
   useEffect(() => {
     if (isLoggingOut) {
