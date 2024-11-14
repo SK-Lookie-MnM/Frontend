@@ -1,71 +1,101 @@
-# Getting Started with Create React App
+# 커밋 메시지 작성 가이드
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+커밋 메시지는 크게 **제목**, **본문**, **꼬리말** 세 가지 파트로 나누며, 각 파트는 빈 줄로 구분합니다.
 
-## Available Scripts
+## 메시지 구조
+- **Type**: 제목
+- **Body**: 본문
+- **Footer**: 꼬리말
 
-In the project directory, you can run:
+각 파트는 아래의 규칙을 따릅니다.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| 태그 이름          | 설명                                                                                         |
+|--------------------|----------------------------------------------------------------------------------------------|
+| Feat               | 새로운 기능을 추가할 경우                                                                    |
+| Fix                | 버그를 고친 경우                                                                             |
+| Design             | CSS 등 사용자 UI 디자인 변경                                                                 |
+| docs               | 문서 수정                                                                                    |
+| !BREAKING CHANGE   | 커다란 API 변경의 경우 (ex API의 arguments, return 값의 변경, DB 테이블 변경 등)               |
+| !HOTFIX            | 급하게 치명적인 버그를 고쳐야 하는 경우                                                      |
+| Style              | 코드 포맷 변경, 세미콜론 누락, 코드 수정이 없는 경우                                          |
+| Refactor           | 프로덕션 코드 리팩토링, 새로운 기능이나 버그 수정 없이 현재 구현을 개선한 경우                |
+| Comment            | 필요한 주석 추가 및 변경                                                                     |
+| Docs               | 문서를 수정한 경우                                                                           |
+| Test               | 테스트 추가, 테스트 리팩토링 (프로덕션 코드 변경 없음)                                       |
+| Chore              | 빌드 태스크 업데이트, 패키지 매니저 설정 (프로덕션 코드 변경 없음)                            |
+| Rename             | 파일 혹은 폴더명을 수정하거나 옮기는 작업만인 경우                                           |
+| Remove             | 파일을 삭제하는 작업만 수행한 경우
 
-### `npm test`
+## 태그 종류
+### 기능 관련 태그
+- **Feat**: 새로운 기능을 추가할 경우
+- **Fix**: 버그를 고친 경우
+- **Design**: 사용자 UI 디자인 변경
+- **!BREAKING CHANGE**: 커다란 API 변경의 경우 (예: API의 arguments, return 값 변경, DB 테이블 변경 등)
+  - 추가적인 문맥 정보를 제공하기 위해 괄호 안에 적을 수 있음
+    - 예: `"Feat(navigation): "`, `"Fix(database): "`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 개선 관련 태그
+- **Style**: 코드 포맷 변경, 오타 수정, 탭 사이즈 변경, 변수명 변경 등 (코드 로직의 변경 없음)
+- **Refactor**: 프로덕션 코드 리팩토링 (새로운 기능이나 버그 수정 없이 현재 구현을 개선)
+- **Comment**: 필요한 주석 추가 및 변경
 
-### `npm run build`
+### 그 외 태그
+- **Docs**: 문서를 수정한 경우 (예: README.md 수정)
+- **Test**: 테스트 코드 추가 또는 테스트 리팩토링 (프로덕션 코드 변경 없음)
+- **Chore**: 빌드 태스크 업데이트, 패키지 매니저 설정 등 (프로덕션 코드 변경 없음)
+- **Rename**: 파일 혹은 폴더명을 수정하거나 옮기는 작업만 수행한 경우
+- **Remove**: 파일을 삭제하는 작업만 수행한 경우
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 제목 작성 방법
+제목은 코드 변경 사항에 대한 짧은 요약을 나타냅니다. 제목은 다음의 규칙을 지킵니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 제목 작성 규칙
+- 제목의 처음은 **동사 원형**으로 시작합니다.
+- **총 글자 수는 50자 이내**로 작성합니다.
+- 마지막에 **특수문자는 삽입하지 않습니다**. (예: 마침표(.), 느낌표(!), 물음표(?))
+- 제목은 **개조식 구문**으로 작성합니다.
 
-### `npm run eject`
+### 영어로 제목 작성 시
+- 첫 글자는 **대문자**로 작성합니다.
+- `"Fix"`, `"Add"`, `"Change"`와 같은 명령어로 시작합니다.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 한글로 제목 작성 시
+- `"고침"`, `"추가"`, `"변경"`과 같은 명령어로 시작합니다.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 제목 예시
+- `Feat: 추가 get data api 함수`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 본문 작성 방법
+본문은 코드 변경에 대한 상세 설명을 담습니다.
 
-## Learn More
+### 본문 작성 규칙
+- 본문은 **한 줄 당 72자 내**로 작성합니다.
+- 본문 내용은 **양에 구애받지 않고 최대한 상세히** 작성합니다.
+- **어떻게 변경했는지**보다 **무엇을 변경했는지 또는 왜 변경했는지**를 설명합니다.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 꼬리말 작성 방법
+꼬리말은 이슈 트래커 ID 등을 포함하여 추가적인 정보를 제공합니다.
 
-### Code Splitting
+### 꼬리말 작성 규칙
+- 꼬리말은 **optional**이며, **이슈 트래커 ID**를 작성합니다.
+- 꼬리말은 `"유형: #이슈 번호"` 형식으로 사용합니다.
+- 여러 개의 이슈 번호를 적을 때는 쉼표로 구분합니다.
+- **이슈 트래커 유형**:
+  - **Fixes**: 이슈 수정 중 (아직 해결되지 않은 경우)
+  - **Resolves**: 이슈를 해결했을 때 사용
+  - **Ref**: 참고할 이슈가 있을 때 사용
+  - **Related to**: 해당 커밋에 관련된 이슈 번호 (아직 해결되지 않은 경우)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# Frontend
+### 꼬리말 예시
+- `Fixes: #45`
+- `Related to: #34, #23`
